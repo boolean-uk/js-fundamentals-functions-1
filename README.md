@@ -42,4 +42,6 @@ In this exercise you will first call some predefined functions and then create y
 
   ![](./img/test-fail.png)
 
-- Your solution is complete when the all the red `F`s have been replaced with green `.`s in your console
+- Your solution is complete when the all the red `F`s have been replaced with green `.`s in your console, as shown below:
+
+  ![](./img/test-pass.png)

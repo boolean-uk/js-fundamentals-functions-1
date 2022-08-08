@@ -2,8 +2,8 @@
 
 ## Learning Objectives
 
-- Call functions to run the code in them and obtain their `return` value as a result
-- Create functions that take a single parameters
+- Call functions to run the code in them and get their `return` value as a result
+- Create functions that take a single parameter
 - Create functions that take multiple parameters
 
 ## Introduction
@@ -26,20 +26,20 @@ In this exercise you will call some predefined functions and then create your ow
 
 - Write your code directly below the numbered comment.
 
-- Add `console.log`'s to get visibility on your solution and run the file with the command `node src/core.js`
+- Add `console.log()`s to get visibility on your solution and run the file with the command `node src/calling-functions.js` *etc*
+
+- See `src/example.js` for some example functions
 
 ## Running tests
 
 - To verify your solutions, run the test suite by running the `npx jasmine` command followed by the path to the corresponding test file for each `src/.js` file above
 
-`npx jasmine spec/calling-functions.spec.js`
+`npx jasmine spec/.spec.js`
 
 - Alternatively, run `npm test`
 
-- To begin with, all of the tests will fail. You'll see red `F`'s in your console, like the image below:
+- To begin with, almost all of the tests will fail - only the example tests will pass with a green `.`. You'll see many red `F`s in your console, like the image below:
 
-![](./img/test-fail.png)
+  ![](./img/test-fail.png)
 
-- Your solution is complete when the red `F`'s have been replaced with green `.`'s in your console, like the image below:
-
-![](./img/test-success.png)
+- Your solution is complete when the all the red `F`s have been replaced with green `.`s in your console

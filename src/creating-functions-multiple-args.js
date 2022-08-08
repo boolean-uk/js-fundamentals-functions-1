@@ -1,4 +1,4 @@
-// define a function that takes two numbers: lower and upper.
+// 1. define a function that takes two numbers: lower and upper.
 // The function should return an array containing all the numbers between
 // lower and upper, including lower and upper.
 //
@@ -10,7 +10,7 @@
 //
 // TODO: write code below
 
-// define a function that takes two arguments: a string and a number.
+// 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
 // determined by the number argument.

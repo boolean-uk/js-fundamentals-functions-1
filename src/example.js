@@ -1,9 +1,10 @@
+// Completed function examples
+
 // Define a function that returns the string "Hi, Ed!"
 // Input | Output
 // - | "Hi, Ed!"
-// TO DO: write code below
 
-function sayHi () {
+function sayHi() {
   return 'Hi, Ed!'
 }
 
@@ -11,8 +12,8 @@ function sayHi () {
 // Input   | Output
 // 1       | 2
 // 4       | 5
-// TO DO: write code below
-function incrementNumber (num) {
+
+function incrementNumber(num) {
   return num + 1
 }
 

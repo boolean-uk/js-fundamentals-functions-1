@@ -1,13 +1,13 @@
 // do not edit the below
-function sayHello () {
+function sayHello() {
   return 'Hello'
 }
 
-function sayHelloTo (name) {
+function sayHelloTo(name) {
   return 'Hello ' + name + '!'
 }
 
-function sayHelloManyTimes (name, times) {
+function sayHelloManyTimes(name, times) {
   let hello = ''
   for (let i = 0; i < times; i++) {
     hello += 'Hello ' + name + '!'
@@ -18,16 +18,14 @@ function sayHelloManyTimes (name, times) {
 
 // TODO: Add and update code here to make the tests pass
 
-// Set this variable to 'Hello' by calling the sayHello function
+// 1. Set this variable to 'Hello' by calling the sayHello function
 const hello = ''
 
-// Set this variable variable to 'Hello Jane' calling the sayHelloTo function
+// 2. Set this variable variable to 'Hello Jane' calling the sayHelloTo function
 const helloToJane = ''
 
-// Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
+// 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
 const helloToBob3Times = ''
-
-
 
 // do not edit below this line
 module.exports = {

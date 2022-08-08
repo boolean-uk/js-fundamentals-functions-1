@@ -1,4 +1,4 @@
-// Define a function that takes a number and increments it by 1.
+// 1. Define a function that takes a number and increments it by 1.
 //
 // Example Input and Output:
 //
@@ -8,7 +8,7 @@
 //
 // TODO: write code below
 
-// Define a function that takes any person's name and returns it with a smiley :)!
+// 2. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
 // Example Input and Output:

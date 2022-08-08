@@ -2,20 +2,20 @@
 
 ## Learning Objectives
 
-- Call functions to run the code in them and get their `return` value as a result
+- Call functions to run the code in them and get the `return` value as a result
 - Create functions that take a single parameter
 - Create functions that take multiple parameters
 
 ## Introduction
 
-In this exercise you will call some predefined functions and then create your own functions that must return a defined value based on the parameters supplied to the function
+In this exercise you will first call some predefined functions and then create your own functions that must `return` a value based on the function requirements and the parameters supplied to the function
 
 ## Setup
 
 - Fork this repository and clone your forked version to your machine
 - Install dependencies by running the command below while in the project's root directory:
 
-`npm ci`
+    `npm ci`
 
 ## Instructions
 
@@ -32,9 +32,9 @@ In this exercise you will call some predefined functions and then create your ow
 
 ## Running tests
 
-- To verify your solutions, run the test suite by running the `npx jasmine` command followed by the path to the corresponding test file for each `src/.js` file above
+- To verify your solutions, run the test suite by running the `npx jasmine` command followed by the path to the corresponding test file for each `src/.js` file above, eg:
 
-`npx jasmine spec/.spec.js`
+    `npx jasmine spec/calling-functions.spec.js`
 
 - Alternatively, run `npm test`
 

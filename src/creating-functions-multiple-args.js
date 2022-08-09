@@ -22,8 +22,8 @@
 //
 // TODO: write code below
 
-// change the exported value to be the name of the function you defined
+// TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined // change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: undefined // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
 }

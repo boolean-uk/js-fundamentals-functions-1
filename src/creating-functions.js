@@ -19,8 +19,8 @@
 //
 // TODO: write code below
 
-// TODO: change undefined to be the name of the functions you defined
+// TODO: change undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // change undefined to be the name of the function you defined to increment a number (the first TODO)
-  b: undefined // change undefined to be the name of the function you defined to say hi (the second TODO)
+  a: undefined, // 1. change undefined to be the name of the function you defined to increment a number (the first TODO)
+  b: undefined // 2. change undefined to be the name of the function you defined to say hi (the second TODO)
 }

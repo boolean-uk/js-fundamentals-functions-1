@@ -24,7 +24,7 @@ In this exercise you will first call some predefined functions and then create y
 
 ## Instructions
 
-- Read through the numbered comments in the following files to understand the requirements of this exercise.
+- Read through the numbered comments - eg `1. Define a function...` - in the following files to understand the requirements of this exercise.
   - `src/calling-functions.js`
   - `src/creating-functions.js`
   - `src/creating-functions-multiple-args.js`

@@ -15,7 +15,7 @@ In this exercise you will first call some predefined functions and then create y
 - Fork this repository and clone your forked version to your machine
 - Install dependencies by running the command below while in the project's root directory:
 
-    `npm ci`
+  `npm ci`
 
 ## Instructions
 
@@ -36,9 +36,11 @@ In this exercise you will first call some predefined functions and then create y
 
     `npx jasmine spec/calling-functions.spec.js`
 
-- Alternatively, run `npm test`
+- Alternatively, run:
 
-- To begin with, almost all of the tests will fail - only the example tests will pass with a green `.`. You'll see many red `F`s in your console, like the image below:
+  `npm test`
+
+- To begin with, almost all of the tests will fail - only the example tests will pass with a green `.` You'll see many red `F`s in your console, like the image below:
 
   ![](./img/test-fail.png)
 

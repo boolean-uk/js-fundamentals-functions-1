@@ -1,5 +1,10 @@
 # Programming Fundamentals: Functions 1
 
+## TODO: Review/updates - then delete this section
+
+- [ ] Add optional Extensions `src` and `spec` files
+  - Add in correct `extensions` sub-directories. See also `--config=...` in `package.json "scripts"` and `spec/support`
+
 ## Learning Objectives
 
 - Call functions to run the code in them and get the `return` value as a result

@@ -7,6 +7,11 @@
 // 2      | 3
 //
 // TODO: write code below
+function incrementsByOne(number) {
+  return ++number
+}
+incrementsByOne(1)
+incrementsByOne(1)
 
 // 2. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!

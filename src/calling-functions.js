@@ -28,7 +28,7 @@ const hello = sayHello()
 const helloToJane = sayHelloTo('Jane')
 
 // 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
-const helloToBob3Times = ''
+const helloToBob3Times = sayHelloManyTimes('Bob', 3)
 
 // do not edit below this line
 module.exports = {

@@ -1,12 +1,15 @@
 // do not edit the below
+
+/* eslint-disable no-unused-vars */
 function sayHello() {
   return 'Hello'
 }
 
+/* eslint-disable no-unused-vars */
 function sayHelloTo(name) {
   return 'Hello ' + name + '!'
 }
-
+/* eslint-disable no-unused-vars */
 function sayHelloManyTimes(name, times) {
   let hello = ''
   for (let i = 0; i < times; i++) {

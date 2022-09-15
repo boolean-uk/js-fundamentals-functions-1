@@ -9,6 +9,14 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function numberArray(lower, upper) {
+  const allNumbers = []
+  for (let i = lower; i <= upper; i++){
+    allNumbers.push(i)
+  }
+  return allNumbers
+}
+numberArray(5, 10)
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,9 +29,19 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function Panic(string, number){
+  let upperString = string.toUpperCase()
+  for(let i = 1; i <= number; i++) {
+    upperString += '!'
+  }
+  console.log(upperString);
+  return upperString
+  
+}
+Panic('Hello', 4)
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: numberArray, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: Panic // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
 }

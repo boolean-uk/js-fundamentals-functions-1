@@ -25,7 +25,7 @@ function sayHelloManyTimes(name, times) {
 const hello = sayHello()
 
 // 2. Set this variable variable to 'Hello Jane' calling the sayHelloTo function
-const helloToJane = ''
+const helloToJane = sayHelloTo('Jane')
 
 // 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
 const helloToBob3Times = ''

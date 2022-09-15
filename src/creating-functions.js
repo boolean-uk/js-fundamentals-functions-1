@@ -7,7 +7,9 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function incrementenator(number) {
+  return ++number
+}
 // 2. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -18,9 +20,15 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function capitalzor(name) {
+  const firstLetter = name[0].toUpperCase()
+  const restOfword = name.slice(1, name.length)
+
+  return `Hi, ${firstLetter + restOfword} :)`
+}
 
 // TODO: change undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined to increment a number (the first TODO)
-  b: undefined // 2. change undefined to be the name of the function you defined to say hi (the second TODO)
+  a: incrementenator, // 1. change undefined to be the name of the function you defined to increment a number (the first TODO)
+  b: capitalzor // 2. change undefined to be the name of the function you defined to say hi (the second TODO)
 }

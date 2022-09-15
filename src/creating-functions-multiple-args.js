@@ -28,7 +28,14 @@ FunctionArray(1, 3)
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function shout(string, number) {
+  let UpperCaseString = string.toUpperCase()
+  for (let i = 0; i < number; i++) {
+    UpperCaseString += '!'
+  }
+  return `${UpperCaseString} `
+}
+shout('disaster', 5)
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)

@@ -23,6 +23,12 @@ incrementsByOne(1)
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function hiWithSmile(name) {
+  const firstLetterUpperCase = name[0].toUpperCase()
+  const restOfName = name.slice(1)
+  return `Hi, ${firstLetterUpperCase + restOfName}:)`
+}
+hiWithSmile('edward')
 
 // TODO: change undefined below to be the name of the functions you defined
 module.exports = {

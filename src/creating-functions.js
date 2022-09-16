@@ -10,6 +10,7 @@
 function increaseByOne(num) {
   return ++num
 }
+console.log(increaseByOne(5))
 
 // 2. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!

@@ -42,7 +42,7 @@
 //
 // TODO: write code below
 
-// 5. Define a function that takes an object and adds a property 'edward to the object if it doesn't yet exist with a default value of 'amazing'
+// 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
 //

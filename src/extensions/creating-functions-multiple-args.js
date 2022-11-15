@@ -22,7 +22,7 @@
 //
 // TODO: write code below
 
-// 2. define a function that takes two arguments: a string and a number.
+// 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
 // Example Input and Output:

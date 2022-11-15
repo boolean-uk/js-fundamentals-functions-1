@@ -22,8 +22,21 @@
 //
 // TODO: write code below
 
+// 2. define a function that takes two arguments: a string and a number.
+// The function should return the new time in 24hr time after adding the additional time in minutes.
+//
+// Example Input and Output:
+// Input        | Output
+// '7:50', 4    | '7:54'
+// '7:50', 72   | '9:02'
+// '11:50', 20  | '12:10'
+// '12:50', 120 | '14:50'
+// '23:50', 30  | '00:20'
+// TODO: write code below
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: undefined // etc
 }

@@ -10,6 +10,21 @@
 //
 // TODO: write code below
 
+function sortingNumbers (num1, num2){
+  const array = [num1]
+  let mid = num1
+  for (let i = 1; i < num2 - num1; i++){
+    mid = mid + 1
+    array.push(mid)
+
+  }
+  array.push(num2)
+  return array
+}
+
+const result = sortingNumbers(-1,1)
+console.log(result)
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +36,19 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function shoutingReallyLoud(str, num){
+  const upperCase = str.toUpperCase()
+  let shout = ""
+    for (let i = 0; i < num; i++){
+      shout += '!'
+    }
+  return upperCase + shout
+      
+}
+
+const result2 = shoutingReallyLoud('disaster', 5)
+console.log(result2)
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.

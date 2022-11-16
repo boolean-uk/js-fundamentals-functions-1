@@ -7,6 +7,11 @@
 // 2      | 3
 //
 // TODO: write code below
+function input(nums) {
+  return nums +1
+}
+const result = input(3)
+
 
 // 2. Define a function that capitalises any string
 
@@ -18,7 +23,12 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function cappystring(caps) {
+  const uppercasechar = caps[0].toUpperCase()
+  const lowercasechar = caps.slice(1)
+  return `${uppercasechar}${lowercasechar}`
+}
+// console.log(cappystring('hello'))
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +39,12 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function smileystring(smileyfaces) {
+  const upperchar = smileyfaces[0].toUpperCase()
+  const lowerchar = smileyfaces.slice(1)
+  return `Hi, ${upperchar}${lowerchar} :)`
+}
+// console.log(smileystring('hamza & kat'))
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,9 +57,33 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+function stringNumber(array) {
+  let numOfString = 0
+  for (let i = 0; i <= array.length; i++) {
+    const stringCheck = typeof array[i]
+    if (stringCheck === 'string') {
+      numOfString += 1
+    }
+  }
+  return numOfString
+}
+const array1 = ['edward', 'aiyana', 'Hamza', 'kat', 9, 10]
+// console.log(stringNumber(array1))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
-//
+function object(name) {
+  if (name.edward) {
+  return name }
+  else { name.edward = 'amazing'}
+  return name
+}
+const name = {
+  aiyana: 'fantastic',
+  akis: 'Amazing',
+  ahmed: 'brain not working',
+}
+// console.log(object(name))
+
 // Example Input and Output:
 //
 // Input                    | Output
@@ -55,9 +95,9 @@
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: input, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: smileystring, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: cappystring, // etc
+  d: stringNumber,
+  e: object,
 }

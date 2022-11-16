@@ -62,9 +62,48 @@ console.log(result2)
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function newTime(str, num) {
+  let oldTime = str
+  let oldTimeMin = Number(str.slice(-2))
+  // console.log(oldTimeMin)
+  let oldTimeHr = Number(str.slice(0, -3))
+  oldTimeHr = oldTimeHr * 60
+  // console.log(oldTimeHr)
+  let minute = num
+  let newMin = minute + oldTimeHr + oldTimeMin
+  // console.log(newMin)
+  let newHr = Math.floor(newMin / 60)
+  // console.log(newHr)
+  newMin = newMin % 60
+  // console.log(newMin)
+  if (newHr >= 24){
+    newHr = newHr - 24
+  }
+  if (newHr === 0){
+    newHr = '0' + String(newHr)
+  } else{
+    newHr = String(newHr)
+  }
+  if (newMin < 10){
+  newMin = '0' + String(newMin)
+  } else{
+    newMin = String(newMin)
+
+  }
+  // newHr = String(newHr)
+  
+  return newHr + ":" + newMin  
+}
+
+const result3 = newTime('23:50', 30)
+
+console.log(result3)
+
+
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: sortingNumbers, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: shoutingReallyLoud, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: newTime // etc
 }

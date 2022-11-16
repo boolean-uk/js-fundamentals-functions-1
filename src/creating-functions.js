@@ -57,10 +57,17 @@ function smiley(name) {
 //
 // TODO: write code below
 function stringNumber(array) {
-  return array.includes('')
+  let numOfString = 0
+  for (let i = 0; i <= array.length; i++) {
+    const stringCheck = typeof array[i]
+    if (stringCheck === 'string') {
+      numOfString += 1
+    }
+  }
+  return numOfString
 }
-const array1 = [1, 'edward']
-console.log(stringNumber(array1))
+const array1 = ['edward', 'aiyana']
+stringNumber(array1)
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -71,12 +78,25 @@ console.log(stringNumber(array1))
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function addEdward(object) {
+  if (object.edward) {
+    return object
+  } else {
+    object.edward = 'amazing'
+    return object
+  }
+}
+const object = {
+  aiyana: 'fantastic',
+  akis: 'Amazing',
+  ahmed: 'brain not working'
+}
+addEdward(object)
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: plusOne, // 1. change undefined to be the name of the function you defined for the first TODO
   b: capitalize, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: smiley, // etc
-  d: undefined,
-  e: undefined
+  d: stringNumber,
+  e: addEdward
 }

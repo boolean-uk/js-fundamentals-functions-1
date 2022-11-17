@@ -10,6 +10,19 @@
 //
 // TODO: write code below
 
+
+function number(lower,upper){
+  let array=[]
+  let number=upper-lower
+  for (let i=0;i<=number;i++){
+    array[i]=lower +i
+  }
+  return array
+}
+let mynumber= number(1,3)
+console.log(mynumber)
+
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +34,17 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function myvalue(string1,number){
+  const uppCaseAlphabet =string1.toUpperCase()
+  let word =''
+  for (let i=0;i<number;i++){
+    word = word + '!'
+   
+  }
+  return uppCaseAlphabet + word
+} let result =myvalue('disaster', 5)
+console.log(result)
+
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -34,9 +58,10 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: number, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: myvalue, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
   c: undefined // etc
 }

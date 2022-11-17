@@ -44,7 +44,7 @@ function smileystring(smileyfaces) {
   const lowerchar = smileyfaces.slice(1)
   return `Hi, ${upperchar}${lowerchar} :)`
 }
-// console.log(smileystring('hamza & kat'))
+ //console.log(smileystring('hamza & kat'))
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //

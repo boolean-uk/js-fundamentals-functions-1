@@ -88,8 +88,8 @@ console.log(object({ aiyana: 'fantastic' }))
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a:addingnumber, // 1. change undefined to be the name of the function you defined for the first TODO
-  b:capitalises  // 2. change undefined to be the name of the function you defined for the second TODO)
+  b:capitalises,  // 2. change undefined to be the name of the function you defined for the second TODO)
   c: people, // etc
-  d:  arrayofdata
-  e: object
+  d: arrayofdata,
+  e: object,
 }

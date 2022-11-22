@@ -8,7 +8,7 @@ describe('Creating Functions:', () => {
   })
 
   describe('Task 2', () => {
-    fit('capitalises any string', () => {
+    it('capitalises any string', () => {
       expect(b('hello')).toEqual('Hello')
     })
     it('capitalises any string', () => {

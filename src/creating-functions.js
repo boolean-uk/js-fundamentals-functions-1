@@ -28,7 +28,8 @@ function cappystring(caps) {
   const lowercasechar = caps.slice(1)
   return `${uppercasechar}${lowercasechar}`
 }
-// console.log(cappystring('hello'))
+console.log(cappystring('hello'))
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -96,8 +97,8 @@ const name = {
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: input, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: smileystring, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: cappystring, // etc
+  b: cappystring, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileystring, // etc
   d: stringNumber,
   e: object,
 }

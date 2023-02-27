@@ -9,14 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-function range(a, b) {
+function range(lower, upper) {
   const array = []
-  for (let i = a; i <= b; i++) {
+  for (let i = lower; i <= upper; i++) {
     array.push(i)
   }
   return array
 }
-console.log(range(10, 13))
 
 // TODO: enable createArray to display the values between start and end
 // TODO: create an empty array

@@ -9,6 +9,7 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+
 function range(lower, upper) {
   const array = []
   for (let i = lower; i <= upper; i++) {
@@ -21,6 +22,8 @@ function range(lower, upper) {
 // TODO: create an empty array
 // TODO: input start to end values into array
 // TODO: return created array
+=======
+
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -33,6 +36,7 @@ function range(lower, upper) {
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
 function CapsLoud(string, num) {
   for (let i = 0; i < num; i++) {
     string += '!'
@@ -44,4 +48,24 @@ function CapsLoud(string, num) {
 module.exports = {
   a: range, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: CapsLoud // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+=======
+
+// 3. define a function that takes two arguments: a string and a number.
+// The function should return the new time in 24hr time after adding the additional time in minutes.
+//
+// Example Input and Output:
+// Input        | Output
+// '7:50', 4    | '7:54'
+// '7:50', 72   | '9:02'
+// '11:50', 20  | '12:10'
+// '12:50', 120 | '14:50'
+// '23:50', 30  | '00:20'
+// TODO: write code below
+
+// TODO: change the exported value to be the name of the function you defined
+module.exports = {
+  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: undefined // etc
+
 }

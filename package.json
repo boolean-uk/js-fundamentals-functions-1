@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx jasmine",
+    "test-all": "npx jasmine --config=spec/support/all-jasmine.json",
+    "test-extensions": "npx jasmine --config=spec/support/extensions-jasmine.json",
     "prepare": "husky install"
   },
   "author": "",

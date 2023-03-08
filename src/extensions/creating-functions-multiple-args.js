@@ -22,6 +22,14 @@
 //
 // TODO: write code below
 
+function addExclam(str1, num1) {
+  const newStr1 = str1.toUpperCase()
+  // eslint-disable-next-line no-unreachable-loop
+  for (let i = 1; i <= num1; i++) {
+    return newStr1
+  }
+}
+
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,6 +41,30 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+
+function timeAdd(timestr, addMins) {
+  const timearr = timestr.split(':')
+  const hours = Number(timearr[0])
+  const minutes = timearr[1]
+  let newMinutes = Number(minutes) + addMins
+  let newHours = hours
+
+  while (newMinutes >= 60) {
+    newMinutes -= 60
+    newHours += 1
+  }
+  newHours = newHours % 24
+  // console.log(newHours)
+  // console.log(newMinutes)
+  let finalHours = String(newHours)
+  if (finalHours === '0') {
+    finalHours = '00'
+  }
+  const finalMinutes = String(newMinutes).padStart(2, '0')
+  return `${finalHours}:${finalMinutes}`
+}
+// timeAdd('23:50', 12)
+console.log(timeAdd('23:50', 12))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

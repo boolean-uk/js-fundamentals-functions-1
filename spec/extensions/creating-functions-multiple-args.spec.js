@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 const {
   a,
   b
 } = require('../../src/extensions/creating-functions-multiple-args')
+=======
+const { a, b, c } = require('../../src/extensions/creating-functions-multiple-args')
+>>>>>>> a7839d4cd33ae100fb4a4ff3d0f609de3f2807f9
 
 describe('Creating Functions Multiple Args:', () => {
   describe('Task 1', () => {

@@ -11,7 +11,7 @@
 function addOne(num1) {
   return num1 + 1
 }
-let add1 = addOne(6)
+const add1 = addOne(6)
 console.log(add1)
 
 // 2. Define a function that capitalises any string
@@ -26,17 +26,10 @@ console.log(add1)
 // TODO: write code below
 
 function firstCapital(input) {
-  let firstChar = input.charAt(0)
-  console.log(firstChar.toUpperCase())
-  return
+  const firstChar = input.charAt(0)
+  return firstChar.toUpperCase() + input.slice(1)
 }
-firstCapital('bonjour')
-
-// function addCapital(caps1) {
-//   return caps1.toUpperCase
-// }
-// let capital1 =
-// console.log
+console.log(firstCapital('hello'))
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -49,12 +42,11 @@ firstCapital('bonjour')
 //
 // TODO: write code below
 
-function Names1(input) {
-  let firstChar = input.charAt(0).toUpperCase() + input.slice(1)
-  console.log('Hi,', firstChar, ':)')
-  return
+function names1(input) {
+  const firstChar = input.charAt(0).toUpperCase() + input.slice(1)
+  return 'Hi, ' + firstChar + ' :)'
 }
-Names1('edward')
+console.log(names1('edward'))
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -75,10 +67,9 @@ function numstrings(numarray) {
       counter += 1
     }
   }
-  console.log(counter)
-  return
+  return counter
 }
-numstrings(['john', 'steven'])
+console.log(numstrings(['john', 'steven']))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -105,7 +96,7 @@ console.log(amazingEd({}))
 module.exports = {
   a: addOne, // 1. change undefined to be the name of the function you defined for the first TODO
   b: firstCapital, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: Names1, // etc
+  c: names1, // etc
   d: numstrings,
   e: amazingEd
 }

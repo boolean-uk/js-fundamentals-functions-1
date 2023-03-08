@@ -1,4 +1,7 @@
-const { a, b } = require('../../src/extensions/creating-functions-multiple-args')
+const {
+  a,
+  b
+} = require('../../src/extensions/creating-functions-multiple-args')
 
 describe('Creating Functions Multiple Args:', () => {
   describe('Task 1', () => {

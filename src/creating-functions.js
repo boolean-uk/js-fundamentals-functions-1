@@ -79,9 +79,9 @@ console.log(countStrings(testArray))
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-const testObject = { aiyana: 'fantastic' }
+const testObject = { echo: false }
 function addEdward(obj) {
-  if (!obj.edward) {
+  if (!Object.hasOwn(obj, 'edward')) {
     obj.edward = 'amazing'
   }
   return obj

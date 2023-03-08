@@ -44,11 +44,13 @@ function cap(str) {
 
 function Smiley(name) {
   const caps = name.charAt(0).toUpperCase() + name.slice(1);
-  const Smiley = caps + " :)";
+  const greeting = "Hi, ";
+  const Smiley = greeting + caps + " :)";
   return Smiley;
+  
 }
 
-const name = "Jake";
+const name = "Edward";
 const greeting = "Hi, ";
 const nameSmiley = Smiley(greeting + name);
 console.log(nameSmiley);

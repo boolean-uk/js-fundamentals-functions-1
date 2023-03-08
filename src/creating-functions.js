@@ -90,7 +90,7 @@ const anBobject = {
 }
 
 function gotEd(anBobject) {
-  let propertyEdward = 'edward' in anBobject
+  const propertyEdward = 'edward' in anBobject
   console.log('is ed there? -', propertyEdward)
 
   if (propertyEdward === false) {

@@ -52,26 +52,25 @@ console.log(stringExclamation('Yo', 4))
 // TODO: write code below
 
 function timeAdd(timestr, addMins) {
-    let timearr = timestr.split(':')
-    let hours = Number(timearr[0])
-    let minutes = timearr[1]
-    let newMinutes = Number(minutes) + addMins
-    let newHours = hours
+  const timearr = timestr.split(':')
+  const hours = Number(timearr[0])
+  const minutes = timearr[1]
+  let newMinutes = Number(minutes) + addMins
+  let newHours = hours
 
-    while (newMinutes >= 60) {
-        newMinutes -= 60
-        newHours += 1
-    }
-    newHours = newHours % 24
-    // console.log(newHours)
-    // console.log(newMinutes)
-    finalHours = String(newHours)
-    if (finalHours === '0') {
-        finalHours = '00'
-    }
-    finalMinutes = String(newMinutes).padStart(2, '0')
-    return `${finalHours}:${finalMinutes}`
-
+  while (newMinutes >= 60) {
+    newMinutes -= 60
+    newHours += 1
+  }
+  newHours = newHours % 24
+  // console.log(newHours)
+  // console.log(newMinutes)
+  let finalHours = String(newHours)
+  if (finalHours === '0') {
+    finalHours = '00'
+  }
+  const finalMinutes = String(newMinutes).padStart(2, '0')
+  return `${finalHours}:${finalMinutes}`
 }
 // timeAdd('23:50', 12)
 console.log(timeAdd('23:50', 12))

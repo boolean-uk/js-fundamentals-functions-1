@@ -25,10 +25,10 @@ console.log(IncrementOne(1))
 // TODO: write code below
 
 function CapitalisationOne(string) {
-  let Split = string.split('')
+  const Split = string.split('')
   Split[0] = Split[0].toUpperCase()
-  let join = Split.join('')
-    return join
+  const join = Split.join('')
+  return join
 }
 
 console.log(CapitalisationOne('hello'))
@@ -70,7 +70,7 @@ function StringArray(array) {
   }
   return Count
 }
-console.log(StringArray(['Edward',1 ,3 ,'Alan', 'Stu']))
+console.log(StringArray(['Edward', 1, 3, 'Alan', 'Stu']))
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -83,7 +83,7 @@ console.log(StringArray(['Edward',1 ,3 ,'Alan', 'Stu']))
 // TODO: write code below
 
 function ObjectCheck(object) {
-  if (object.hasOwnProperty('edward')) {
+  if (Object.prototype.hasOwnProperty.call(object, 'edward')) {
     return object
   } else {
     object.edward = 'amazing'
@@ -91,7 +91,7 @@ function ObjectCheck(object) {
   }
 }
 
-console.log(ObjectCheck({ edward: 'amazing'}))
+console.log(ObjectCheck({ edward: 'amazing' }))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

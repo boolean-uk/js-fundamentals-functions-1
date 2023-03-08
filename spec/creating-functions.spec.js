@@ -46,10 +46,13 @@ describe('Creating Functions:', () => {
       expect(e({})).toEqual({ edward: 'amazing' })
     })
     it('adds prop to object if it does not exist', () => {
-      expect(e({ aiyana: 'fantastic' })).toEqual({ aiyana: 'fantastic', edward: 'amazing' })
+      expect(e({ aiyana: 'fantastic' })).toEqual({
+        aiyana: 'fantastic',
+        edward: 'amazing'
+      })
     })
     it('adds prop to object if it does not exist', () => {
-      expect(e({ edward: 'fabulous'})).toEqual({ edward: 'fabulous'})
+      expect(e({ edward: 'fabulous' })).toEqual({ edward: 'fabulous' })
     })
   })
 })

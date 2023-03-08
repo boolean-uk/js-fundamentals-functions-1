@@ -12,7 +12,7 @@ function addOne(numberOne) {
 }
 
 addOne()
-console.log("Test 1", addOne(4))
+console.log('Test 1', addOne(4))
 
 // 2. Define a function that capitalises any string
 
@@ -27,7 +27,7 @@ console.log("Test 1", addOne(4))
 function capitaliseString(aString) {
   return aString.charAt().toUpperCase() + aString.slice(1)
 }
-console.log(capitaliseString("boolean"))
+console.log(capitaliseString('boolean'))
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -41,11 +41,10 @@ console.log(capitaliseString("boolean"))
 // TODO: write code below
 
 function nameWithSmiley(name) {
-  return capitaliseString(name) + " :)"
+  return `Hi, ${capitaliseString(name)} :)`
 }
 
-console.log(nameWithSmiley("ronaldo"))
-
+console.log(nameWithSmiley('Edward'))
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -59,7 +58,22 @@ console.log(nameWithSmiley("ronaldo"))
 //
 // TODO: write code below
 
-// 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
+function howManyStrings(array) {
+  const newArray = []
+  for (let i = 0; i <= array.length; i++) {
+    if (typeof array[i] === 'string') {
+      newArray.push(array[i])
+    }
+  }
+  return newArray.length
+}
+console.log(
+  'test 2 -',
+  howManyStrings(['edward', 'aiyana', 'ian', 4, 'carol', 7])
+)
+
+// 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist
+// with a default value of 'amazing'
 //
 // Example Input and Output:
 //
@@ -70,11 +84,28 @@ console.log(nameWithSmiley("ronaldo"))
 //
 // TODO: write code below
 
+const anBobject = {
+  first: 1,
+  edward: 'amazing'
+}
+
+function gotEd(anBobject) {
+  let propertyEdward = 'edward' in anBobject
+  console.log('is ed there? -', propertyEdward)
+
+  if (propertyEdward === false) {
+    anBobject.edward = 'amazing'
+    console.log('is ed there now?', anBobject)
+  }
+  return anBobject
+}
+console.log('are we there yet? -', gotEd(anBobject))
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: addOne, // 1. change undefined to be the name of the function you defined for the first TODO
   b: capitaliseString, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  c: nameWithSmiley, // etc
+  d: howManyStrings,
+  e: gotEd
 }

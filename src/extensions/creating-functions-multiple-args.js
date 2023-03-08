@@ -9,7 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function arrayBuilder(num1, num2){
+  const range = []
+  for ( i = num1; i <= num2; i++){
+    range.push(i)
+  }
+return range
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +27,13 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function shouting(word, numOfExclaims){
+  const exclamation = '!'
+  return word.toUpperCase() + exclamation.repeat(numOfExclaims)
+}
+// const firstShout = shouting('habibi', 4)
+// console.log(firstShout)
+// numOfExclaims * '!'   ???????
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,6 +46,14 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function clock(time, minutes){
+  if (time.length < 5){
+    if (minutes < 10 && ){
+      time.splice(3, 1, minutes)
+    }
+    else if (time.length )
+  }
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

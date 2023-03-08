@@ -46,18 +46,11 @@ function shouting(word, numOfExclaims){
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
-function clock(time, minutes){
-  if (time.length < 5){
-    if (minutes < 10 && ){
-      time.splice(3, 1, minutes)
-    }
-    else if (time.length )
-  }
-}
+
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: arrayBuilder, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: shouting, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
   c: undefined // etc
 }

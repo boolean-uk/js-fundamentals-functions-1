@@ -50,7 +50,7 @@ const name2 = 'john'
 function modS(name) {
   const change1 = name[0].toUpperCase()
   name[0] = change1
-  const newString = 'Hi, ' + change1 + name.slice(1, name.length) + ' :)!'
+  const newString = 'Hi, ' + change1 + name.slice(1, name.length) + ' :)'
 
   return newString
 }
@@ -69,12 +69,17 @@ console.log(modS(name2))
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-let sAmount = 0
+
 const array = ['hope', 'this', 'works', 1]
+const array2 = ['edward']
+const array3 = ['edward', 'aiyana']
+const array4 = [1]
+const array5 = [1, 'edward']
 let i = 0
 // console.log(typeof (array[4]))
 
 function arrayCount(data) {
+  let sAmount = 0
   for (i = 0; i < data.length; i++) {
     if (typeof data[i] === 'string') {
       sAmount++
@@ -84,6 +89,10 @@ function arrayCount(data) {
 }
 
 console.log(arrayCount(array))
+console.log(arrayCount(array2))
+console.log(arrayCount(array3))
+console.log(arrayCount(array4))
+console.log(arrayCount(array5))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -100,7 +109,7 @@ const ob2 = { aiyana: 'fantastic' }
 const ob3 = { edward: 'fabulous' }
 
 function edA(blank) {
-  if (blank.edward === true) {
+  if (blank.edward) {
     return blank
   } else {
     blank.edward = 'amazing'

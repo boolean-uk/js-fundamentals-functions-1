@@ -15,15 +15,6 @@ const test = numInc(3)
 console.log(test)
 
 // 2. Define a function that capitalises any string
-const test2 = capString('hi fred')
-
-function capString(string) {
-  const change1 = string[0].toUpperCase()
-  string[0] = change1
-  const string2 = change1 + string.slice(1, string.length)
-  return string2
-}
-console.log(test2)
 
 // Example Input and Output:
 //
@@ -33,6 +24,15 @@ console.log(test2)
 // Hello | Hello
 
 // TODO: write code below
+const test2 = capString('hi fred')
+
+function capString(string) {
+  const change1 = string[0].toUpperCase()
+  string[0] = change1
+  const string2 = change1 + string.slice(1, string.length)
+  return string2
+}
+console.log(test2)
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -44,13 +44,13 @@ console.log(test2)
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-const name1 = 'alex'
-const name2 = 'john'
+const name1 = 'Edward'
+const name2 = 'Aiyana'
 
 function modS(name) {
   const change1 = name[0].toUpperCase()
   name[0] = change1
-  const newString = 'Hi, ' + change1 + name.slice(1, name.length) + ' :)!'
+  const newString = 'Hi, ' + change1 + name.slice(1, name.length) + ' :)'
 
   return newString
 }
@@ -70,7 +70,7 @@ console.log(modS(name2))
 //
 // TODO: write code below
 let sAmount = 0
-const array = ['hope', 'this', 'works', 1]
+const array = ['I', 'hope', 'this', 'works', 1]
 let i = 0
 // console.log(typeof (array[4]))
 
@@ -100,7 +100,7 @@ const ob2 = { aiyana: 'fantastic' }
 const ob3 = { edward: 'fabulous' }
 
 function edA(blank) {
-  if (blank.edward === true) {
+  if (blank.edward) {
     return blank
   } else {
     blank.edward = 'amazing'

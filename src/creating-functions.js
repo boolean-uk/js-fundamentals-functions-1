@@ -71,10 +71,17 @@ console.log(modS(name2))
 // TODO: write code below
 let sAmount = 0
 const array = ['I', 'hope', 'this', 'works', 1]
+
+const array = ['hope', 'this', 'works', 1]
+const array2 = ['edward']
+const array3 = ['edward', 'aiyana']
+const array4 = [1]
+const array5 = [1, 'edward']
 let i = 0
 // console.log(typeof (array[4]))
 
 function arrayCount(data) {
+  let sAmount = 0
   for (i = 0; i < data.length; i++) {
     if (typeof data[i] === 'string') {
       sAmount++
@@ -84,6 +91,10 @@ function arrayCount(data) {
 }
 
 console.log(arrayCount(array))
+console.log(arrayCount(array2))
+console.log(arrayCount(array3))
+console.log(arrayCount(array4))
+console.log(arrayCount(array5))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //

@@ -34,6 +34,7 @@ console.log(generateRange(-1, 1));
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
 function UpdatedString(str, num) {
   const upperString = str.toUpperCase();
   const exclamation = "!".repeat(num);
@@ -52,9 +53,25 @@ function UpdatedString(str, num) {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function convertTime(str, num) {
+  const minutes = Number(str.slice(str.indexOf(':') + 1))
+  const hours = Number(str.slice(0, str.indexOf(':')))
+  const totalMinutes = hours * 60 + minutes + num
+  let newMinutes = totalMinutes % 60
+  let newHours = Math.floor(totalMinutes / 60) % 24
+
+  if (newHours === 0) {
+    newHours = newHours.toString() + '0'
+  }
+  if (newMinutes < 10) {
+    newMinutes = '0' + newMinutes.toString()
+  }
+  return `${newHours}:${newMinutes}`
+}
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: generateRange, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: UpdatedString, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: addMinsToTime // etc
+  c: convertTime // etc
 }

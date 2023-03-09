@@ -10,14 +10,15 @@
 //
 // TODO: write code below
 
-const array = []
 function allNums(lower, upper) {
+  const array = []
   for (let i = lower; i <= upper; i++) {
-    array.push([i])
+    array.push(i)
   }
+  return array
 }
-allNums(-1, 1)
-console.log(array)
+console.log(allNums(-1, 1))
+console.log(allNums(1, 3))
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -50,7 +51,7 @@ console.log(twoArgs('Hello', 7))
 // TODO: write code below
 
 function newTime(oldTimeString, additionalMins) {
-  timeSplit = oldTimeString.split(':')
+  const timeSplit = oldTimeString.split(':')
   const currentHoursToMins = parseInt(timeSplit[0] * 60)
   const currentMinsToMins = parseInt(timeSplit[1])
   const currentMinsTotal = currentHoursToMins + currentMinsToMins
@@ -58,8 +59,11 @@ function newTime(oldTimeString, additionalMins) {
   if (newMinsTotal >= 1440) {
     newMinsTotal = newMinsTotal - 1440
   }
-  const newHours = Math.floor(newMinsTotal / 60)
+  let newHours = Math.floor(newMinsTotal / 60)
   let newMins = newMinsTotal % 60
+  if (newHours < 1) {
+    newHours = `0${newHours}`
+  }
   if (newMins < 10) {
     newMins = `0${newMins}`
   }

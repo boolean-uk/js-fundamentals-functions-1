@@ -46,11 +46,40 @@ function shouting(word, numOfExclaims){
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function clock (time, num1){
+  h = Math.floor(num1/60)
+  m = num1%60
+  let newTime
+  if (time.length <= 4){
+    minutes = parseInt(time.slice(2, 4)) + m
+    hours = Math.floor(minutes/60) + h
+    newMinutes = minutes % 60
+    if (newMinutes < 10){
+      newMinutes = '0' + newMinutes
+    }
+    newHour = parseInt(time.charAt(0)) + hours
+    newestHour = newHour % 24
+    newTime = `${newHour}:${newMinutes}`
+  } 
+  else if (time.length === 5) {
+      min = parseInt(time.slice(3, 5)) + m
+      jam = Math.floor(min/60) + h
+    newMin = min % 60
+    newJam = parseInt(time.slice(0, 2)) + jam
+    newestJam = newJam % 24
+    newTime = `${newestJam}:${newMin}`
+    if (newTime.slice(0, 2) === '0:'){
+      newTime = '0' + newTime
+    }
+  }
+return newTime
+}
 
-
+const res = clock('7:20', 42)
+console.log('new result: ', res)
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: arrayBuilder, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: shouting, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: clock // etc
 }

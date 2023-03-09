@@ -49,9 +49,32 @@ console.log(twoArgs('Hello', 7))
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function newTime(oldTimeString, additionalMins) {
+  timeSplit = oldTimeString.split(':')
+  const currentHoursToMins = parseInt(timeSplit[0] * 60)
+  const currentMinsToMins = parseInt(timeSplit[1])
+  const currentMinsTotal = currentHoursToMins + currentMinsToMins
+  let newMinsTotal = currentMinsTotal + additionalMins
+  if (newMinsTotal >= 1440) {
+    newMinsTotal = newMinsTotal - 1440
+  }
+  const newHours = Math.floor(newMinsTotal / 60)
+  let newMins = newMinsTotal % 60
+  if (newMins < 10) {
+    newMins = `0${newMins}`
+  }
+  return `${newHours}:${newMins}`
+}
+
+console.log(newTime('7:50', 4))
+console.log(newTime('7:50', 72))
+console.log(newTime('11:50', 20))
+console.log(newTime('12:50', 120))
+console.log(newTime('23:50', 30))
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: allNums, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: twoArgs, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: newTime // etc
 }

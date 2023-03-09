@@ -72,7 +72,6 @@ console.log(modS(name2))
 let sAmount = 0
 const array = ['I', 'hope', 'this', 'works', 1]
 
-const array = ['hope', 'this', 'works', 1]
 const array2 = ['edward']
 const array3 = ['edward', 'aiyana']
 const array4 = [1]

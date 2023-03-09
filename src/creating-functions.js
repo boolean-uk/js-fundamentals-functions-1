@@ -95,5 +95,5 @@ module.exports = {
   b: addsCap, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: addSmiley, // etc
   d: stringCount,
-  e: changeObject
+  e: amazingEd
 }

@@ -56,8 +56,8 @@ console.log(addSmiley('edward'))
 //
 // TODO: write code below
 
-const array = ['Edward', 'Aiyana', 4, 6, 'Jason', 10]
-function stringCount() {
+// const array = ['Edward', 'Aiyana', 4, 6, 'Jason', 10]
+function stringCount(array) {
   let nonStringCount = 0
   for (let i = 0; i < array.length; i++) {
     if (typeof array[i] === 'string') {
@@ -66,7 +66,8 @@ function stringCount() {
   }
   return nonStringCount
 }
-console.log(stringCount())
+console.log(stringCount(['Edward', 'Aiyana', 4, 6, 'Jason', 10]))
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -78,23 +79,15 @@ console.log(stringCount())
 //
 // TODO: write code below
 
-let object = { 
-
+function amazingEd(object) {
+  if (object.edward) {
+    return object
+  } else {
+    object.edward = 'amazing'
+    return object
+  }
 }
- console.log(object)
- function changeObject() {
-   let properties = Object.keys(object)
-   for (let i = 0; i <= properties.length; i++) {
-   if ((properties[i] === 'edward') && (object[properties[i]] === 'amazing')) {
-           object.edward = 'amazing'
-         } else if ((properties[i] !== 'edward') && (object[properties[i]] !== 'amazing')) {
-           object.edward = 'amazing'
-     }
-   }
-   return object
- }
- 
- console.log(changeObject())
+console.log(amazingEd({}))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

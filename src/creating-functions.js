@@ -69,7 +69,7 @@ console.log(modS(name2))
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-let sAmount = 0
+
 const array = ['I', 'hope', 'this', 'works', 1]
 
 const array2 = ['edward']

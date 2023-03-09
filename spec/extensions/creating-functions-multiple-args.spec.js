@@ -1,12 +1,18 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3f7ac780f2f9d012893e91a5ed05027d64c84bfa
 const {
   a,
   b,
   c
 } = require('../../src/extensions/creating-functions-multiple-args')
+<<<<<<< HEAD
 =======
 const { a, b, c } = require('../../src/extensions/creating-functions-multiple-args')
 >>>>>>> a7839d4cd33ae100fb4a4ff3d0f609de3f2807f9
+=======
+>>>>>>> 3f7ac780f2f9d012893e91a5ed05027d64c84bfa
 
 describe('Creating Functions Multiple Args:', () => {
   describe('Task 1', () => {

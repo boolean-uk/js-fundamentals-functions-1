@@ -51,11 +51,17 @@ console.log(twoArgs('Hello', 7))
 // TODO: write code below
 
 function newTime(oldTimeString, additionalMins) {
+  // splitting into hours and minutes as 2 elements of array
   const timeSplit = oldTimeString.split(':')
+  // converting hours into minutes, and convert data type from string to number
   const currentHoursToMins = parseInt(timeSplit[0] * 60)
+  // convert data type of mins from string to number
   const currentMinsToMins = parseInt(timeSplit[1])
+  //  total number of minutes at start
   const currentMinsTotal = currentHoursToMins + currentMinsToMins
+  // adding old hours and mins together
   let newMinsTotal = currentMinsTotal + additionalMins
+  // adding second parameter to total
   if (newMinsTotal >= 1440) {
     newMinsTotal = newMinsTotal - 1440
   }

@@ -85,5 +85,5 @@ return `${newHours}:${newMinutes}`
 module.exports = {
   a: returnNumbersInBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: returnStringUpperCaseExclamations, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  // c: undefined // etc
+  c: clock // etc
 }

@@ -9,6 +9,16 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function returnNumbersInBetween(firstNumber, lastNumber) {
+  let newArray = []
+  for (let i = firstNumber; i <= lastNumber; i++) {
+newArray.push(i)
+  }
+  console.log(newArray)
+  return newArray
+}
+
+returnNumbersInBetween(-1,10)
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -22,6 +32,16 @@
 //
 // TODO: write code below
 
+function returnStringUpperCaseExclamations(aString, aNumber) {
+  let newString = ''
+  const exclamation = '!'
+  for (let i = 0; i <= aNumber - 1; i++) {
+    newString += exclamation
+  }
+  return aString.toUpperCase() + newString
+}
+
+console.log(returnStringUpperCaseExclamations("my my my", 10))
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -34,9 +54,36 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function clock(timeString, aNumber) {
+  const newTime = timeString.split(':')
+  const hours = newTime[0]
+  const minutes = newTime[1]
+  let totalMinutes = 0
+  let newHoursToMin = 0
+  console.log(newTime)
+  newHoursToMin = parseInt(hours, 10) * 60
+  totalMinutes = parseInt(minutes, 10) + aNumber + newHoursToMin
+  console.log(totalMinutes)
+  if (totalMinutes >= 1440) {
+  totalMinutes = totalMinutes - 1440
+  }
+  let newHours = Math.floor(totalMinutes / 60)
+  let newMinutes = totalMinutes % 60
+  if (newHours < 1) {
+    newHours = `0${newHours}`
+  }
+  if (newMinutes < 10) {
+    newMinutes = `0${newMinutes}`
+  }
+return `${newHours}:${newMinutes}`
+  }
+
+  console.log(clock('23:56', 4))
+
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: returnNumbersInBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: returnStringUpperCaseExclamations, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  // c: undefined // etc
 }

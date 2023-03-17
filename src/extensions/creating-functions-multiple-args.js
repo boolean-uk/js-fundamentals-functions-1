@@ -9,7 +9,14 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function modifiedNumbers(lower, upper){
+  const array = []//array created
+  for(let x = lower; x < upper + 1; x++){
+  array.push(x)//numbers pushed to an array
+  }
+  return array
+}
+console.log(modifiedNumbers(65 , 80))
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +28,16 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function modifiedInput(string, number){
+  const upperCase = string.toUpperCase()
+  let numberOfexclamationmarks = ''
+  for (let x = 0; x < number; x++){
+    numberOfexclamationmarks = numberOfexclamationmarks + '!'
+  }
+  const result = upperCase + numberOfexclamationmarks
+  return result
+}
+console.log(modifiedInput('whyThisIsSoHard', 69))
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -36,7 +52,7 @@
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: modifiedNumbers, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: modifiedInput, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
   c: undefined // etc
 }

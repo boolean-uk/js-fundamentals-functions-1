@@ -9,6 +9,16 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function arrCreation(start, end) {
+  const arr = []
+  let j = 0
+
+  for (let i = start; i <= end; i++) {
+    arr[j] = i
+    j++
+  }
+  return arr
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +31,14 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function capitalExclamations(string, num) {
+  let result = string.toUpperCase()
+
+  for (let i = 0; i < num; i++) {
+    result = result + '!'
+  }
+  return result
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +51,34 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function newTime(time, minutes) {
+  const splitTime = time.split(':')
+  if (Number(splitTime[1]) + minutes < 60) {
+    splitTime[1] = Number(splitTime[1]) + minutes
+    if (Number(splitTime[1]) < 10) {
+      splitTime[1] = '0' + splitTime[1]
+    }
+  } else {
+    const hours = Math.floor((Number(splitTime[1]) + minutes) / 60)
+    minutes = minutes - 60 * hours
+    splitTime[1] = Number(splitTime[1]) + minutes
+    if (Number(splitTime[1]) < 10) {
+      splitTime[1] = '0' + splitTime[1]
+    }
+    for (let i = 0; i < hours; i++) {
+      if (Number(splitTime[0]) === 23) {
+        splitTime[0] = '00'
+      } else {
+        splitTime[0] = Number(splitTime[0]) + 1
+      }
+    }
+  }
+  return splitTime.join(':')
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: arrCreation, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: capitalExclamations, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: newTime // etc
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 // 1. define a function that takes two numbers: lower and upper.
 // The function should return an array containing all the numbers between
 // lower and upper, including lower and upper.
@@ -9,7 +10,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function createNumberRange(lower, upper) {
+  const range = []
+  for (let i = lower; i <= upper; i++) {
+    range.push(i)
+  }
+  return range
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +28,9 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function appendExclamationMarks(str, num) {
+  return str.toUpperCase() + "!".repeat(num)
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +42,19 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
-
+function addMinutesToTime(time, minutes) {
+  const [hours, minutesStr] = time.split(":")
+  const currentMinutes = parseInt(hours) * 60 + parseInt(minutesStr)
+  const newMinutes = (currentMinutes + minutes) % (24 * 60)
+  const newHours = Math.floor(newMinutes / 60)
+  const newMinutesStr = (newMinutes % 60).toString().padStart(2, "0")
+  const formattedHours = newHours < 10 && newHours !== 0 ? String(newHours) : String(newHours).padStart(2, "0");
+  return `${formattedHours}:${newMinutesStr}`
+}
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: createNumberRange, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: appendExclamationMarks, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutesToTime // etc
 }
+// eslint-enable

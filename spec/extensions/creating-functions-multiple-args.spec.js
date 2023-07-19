@@ -7,6 +7,7 @@ const {
 describe('Creating Functions Multiple Args:', () => {
   describe('Task 1', () => {
     it('First function returns range 1 to 3', () => {
+      console.log(a)
       expect(a(1, 3)).toEqual([1, 2, 3])
     })
     it('First function returns range -1 to 1', () => {

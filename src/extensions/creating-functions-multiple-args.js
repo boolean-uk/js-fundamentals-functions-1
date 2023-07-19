@@ -9,6 +9,8 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+const range = (lower, upper) =>
+  [...Array(upper - lower + 1).keys()].map((n) => n + lower)
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +23,7 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+const scream = (str, n) => str.toUpperCase() + '!'.repeat(n)
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +36,17 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+const addMinutes = (hour, mins) => {
+  let [h, m] = hour.split(':')
+  const totalMins = 60 * h + parseInt(m) + parseInt(mins)
+  h = Math.floor(totalMins / 60) % 24
+  m = totalMins % 60
+  return `${h === 0 ? '0' + h : h}:${m < 10 ? '0' + m : m}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: range, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: scream, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutes // etc
 }

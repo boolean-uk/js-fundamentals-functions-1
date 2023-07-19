@@ -68,7 +68,7 @@ function countStrings(array) {
 //
 // TODO: write code below
 function addEdward(obj) {
-  if (Object.hasOwnProperty.call(obj, 'property')) {
+  if (!Object.hasOwnProperty.call(obj, 'edward')) {
     obj.edward = 'amazing'
   }
   return obj

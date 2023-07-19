@@ -10,7 +10,7 @@
 //
 // TODO: write code below
 function returnNumbersBetween(a, b) {
-  let array = []
+  const array = []
   for (let i = a; i <= b; i++) {
     array.push(i)
   }
@@ -46,14 +46,15 @@ console.log(upperCaseWithExclamationMarks('disaster', 5))
 // TODO: write code below
 
 function addMinutesToTime(timeString, minutesToAdd) {
-  let timeParts = timeString.split(':')
-  let hours = parseInt(timeParts[0], 10)
-  let minutes = parseInt(timeParts[1], 10)
-  let dateObj = new Date()
+  const timeParts = timeString.split(':')
+  const hours = parseInt(timeParts[0], 10)
+  const minutes = parseInt(timeParts[1], 10)
+  const dateObj = new Date()
   dateObj.setHours(hours)
   dateObj.setMinutes(minutes)
   dateObj.setMinutes(dateObj.getMinutes() + minutesToAdd)
-  let formattedTime   =   dateObj.getHours() + ':' + ('0' + dateObj.getMinutes()).slice(-2)
+  const formattedTime =
+    dateObj.getHours() + ':' + ('0' + dateObj.getMinutes()).slice(-2)
   return formattedTime
 }
 console.log(addMinutesToTime('7:50', 4))

@@ -74,6 +74,7 @@ console.log(howManyStrings([1, 'edward']))
 //
 // TODO: write code below
 function addingEdward(object) {
+  // eslint-disable-next-line no-prototype-builtins
   if (!object.hasOwnProperty('edward')) {
     object.edward = 'amazing'
   }

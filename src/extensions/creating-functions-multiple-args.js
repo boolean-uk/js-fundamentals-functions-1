@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function printBetween(lower, upper) {
+  const arr = []
+  for (let i = lower; i <= upper; i++) {
+    arr.push(i)
+  }
+  return arr
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,14 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function upperWithExclamation(word, number) {
+  let exclaminations = ''
+  for (let i = 0; i < number; i++) {
+    exclaminations += '!'
+  }
+
+  return word.toUpperCase() + exclaminations
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +48,29 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addTime(time, additionMinutes) {
+  const [hours, minutes] = time.split(':').map(Number)
+  let totalMinutes = hours * 60 + minutes + additionMinutes
+
+  const minutesInDay = 1440
+
+  totalMinutes = (totalMinutes + minutesInDay) % minutesInDay
+
+  const newHours = Math.floor(totalMinutes / 60)
+  const newMinutes = totalMinutes % 60
+
+  const finalFormat =
+    (newHours === 0 ? '0' + newHours : newHours) +
+    ':' +
+    (newMinutes < 10 ? '0' + newMinutes : newMinutes)
+
+  console.log(finalFormat)
+  return finalFormat
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: printBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: upperWithExclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addTime // etc
 }

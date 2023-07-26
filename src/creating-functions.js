@@ -28,12 +28,12 @@ function nameToSmiley(name) {
   const nameCap = name[0].toUpperCase()
   const restOfWord = name.slice(1)
 
-  return `Hi ${nameCap + restOfWord} :)`
+  return `Hi, ${nameCap + restOfWord} :)`
 }
 nameToSmiley('bob')
 
 // TODO: change undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined to increment a number (the first TODO)
-  b: undefined // 2. change undefined to be the name of the function you defined to say hi (the second TODO)
+  a: upByOne, // 1. change undefined to be the name of the function you defined to increment a number (the first TODO)
+  b: nameToSmiley // 2. change undefined to be the name of the function you defined to say hi (the second TODO)
 }

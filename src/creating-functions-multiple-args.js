@@ -11,7 +11,7 @@
 // TODO: write code below
 
 function numsArray(lowernum, uppernum) {
-  let numList = []
+  const numList = []
   for (let i = lowernum; i <= uppernum; i++) {
     numList.push(i)
   }

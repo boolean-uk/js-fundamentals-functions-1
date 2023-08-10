@@ -48,11 +48,23 @@ function exclamationMark(str, num) {
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function newTime(str, time) {
+  const [strHours, strMinute] = str.split(':')
+  let hours = Number(strHours)
+  let minutes = Number(strMinute)
+
+  minutes += (minutes + time) % 2
+  hours += Math.floor((minutes + time) / 2)
+  if (hours >= 24) {
+    hours -= 24
+  }
+  return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 
 module.exports = {
   a: lowerAndUpper, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: exclamationMark, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: newTime // etc
 }

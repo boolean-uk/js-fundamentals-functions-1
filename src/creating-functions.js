@@ -7,9 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function incrementNumber(num) {
+  return num + 1
+}
 // 2. Define a function that capitalises any string
-
 // Example Input and Output:
 //
 // Input | Output
@@ -18,7 +19,11 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitaliseString(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1)
+}
+const greeting = 'hello'
+console.log(greeting)
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,7 +34,13 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-
+function Smiley(name) {
+  const capitalized = name.charAt(0).toUpperCase() + name.slice(1)
+  return 'Hi, ' + capitalized + ' :)'
+}
+const name = 'edward'
+const hiThere = Smiley(name)
+console.log(hiThere)
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -55,9 +66,9 @@
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
+  a: incrementNumber, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitaliseString, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: Smiley, // etc
   d: undefined,
   e: undefined
 }

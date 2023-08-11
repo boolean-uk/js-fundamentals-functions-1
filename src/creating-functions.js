@@ -10,6 +10,7 @@
 function incrementNumber(num) {
   return num + 1
 }
+console.log(incrementNumber(12))
 // 2. Define a function that capitalises any string
 // Example Input and Output:
 //
@@ -52,6 +53,18 @@ console.log(hiThere)
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+const sizeArr = [1, 'edward', 'aiyana', 'Henk', 'Karel']
+
+function dataSize(dataArray) {
+  let stringSize = 0
+  for (let i = 0; i < dataArray.length; i++) {
+    if (typeof dataArray[i] === 'string') {
+      stringSize++
+    }
+  }
+  return stringSize
+}
+console.log(dataSize(sizeArr))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -63,12 +76,21 @@ console.log(hiThere)
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+function edward(object) {
+  if (object.edward !== 'fabulous') {
+    object.edward = 'amazing'
+  }
+  return object
+}
+const object = { aiyana: 'fantastic' }
+const callingEdward = edward(object)
+console.log(callingEdward)
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: incrementNumber, // 1. change undefined to be the name of the function you defined for the first TODO
   b: capitaliseString, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: Smiley, // etc
-  d: undefined,
-  e: undefined
+  d: dataSize,
+  e: edward
 }

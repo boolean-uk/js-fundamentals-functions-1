@@ -50,10 +50,13 @@ function newTime(string, number) {
   const newHours = Math.floor(total / 60) % 24
   const newMinutes = total % 60
 
-  const time = `${newHours.toString().padStart(2, '0')}:${newMinutes
-    .toString()
-    .padStart(2, '0')}`
-  return time
+  if (newHours >= 10 || newHours === 0) {
+    // eslint-disable-next-line prettier/prettier
+    return `${String(newHours).padStart(2, '0')}:${String(newMinutes).padStart(2, '0')}`
+  } else {
+    // eslint-disable-next-line prettier/prettier
+    return `${String(newHours).padStart(1, '0')}:${String(newMinutes).padStart(2, '0')}`
+  }
 }
 
 // TODO: change the exported value to be the name of the function you defined

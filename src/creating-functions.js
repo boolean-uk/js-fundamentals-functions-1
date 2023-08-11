@@ -21,7 +21,10 @@ function incrementBy1(number) {
 
 // TODO: write code below
 function capitalizeStr(str) {
-  return str.toUpperCase()
+  const firstLetter = str.charAt(0)
+  const capitalizedFirstLetter = firstLetter.toUpperCase()
+  const remainingLetters = str.slice(1)
+  return capitalizedFirstLetter + remainingLetters
 }
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -39,7 +42,7 @@ function smileyName(name) {
   const capitalizedFirstLetter = firstLetter.toUpperCase()
   const remainingLetters = person.slice(1)
   const correctName = capitalizedFirstLetter + remainingLetters
-  console.log('Hi,' + correctName + ':)')
+  return 'Hi, ' + correctName + ' :)'
 }
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -54,7 +57,7 @@ function smileyName(name) {
 // TODO: write code below
 function howManyString(data) {
   let count = 0
-  for (let i = 0; i < data.lenght; i++) {
+  for (let i = 0; i < data.length; i++) {
     if (typeof data[i] === 'string') {
       count += 1
     }

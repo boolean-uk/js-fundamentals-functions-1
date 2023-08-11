@@ -51,7 +51,22 @@ function upperExclamation (string, number)
 // TODO: write code below
 function addTime(startingTime, addedTime)
 {
-  return false
+  let [hours, minutes] = startingTime.split(":").map(Number);
+
+  let totalMinutes = hours * 60 + minutes + addedTime;
+  let newHours = Math.floor(totalMinutes / 60);
+  let newMinutes = totalMinutes % 60;
+
+  if (newHours >= 24)
+  {
+    newHours -= 24;
+  }
+
+  let formatHours = newHours === 0 ? '00' : String(newHours)
+  let formatMinutes = newMinutes.toString().padStart(2, '0')
+  let returnValue1 = `${formatHours}:${formatMinutes}`
+
+  return returnValue1
 }
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

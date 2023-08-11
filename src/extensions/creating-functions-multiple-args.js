@@ -53,12 +53,20 @@ function newTime(str, time) {
   let hours = Number(strHours)
   let minutes = Number(strMinute)
 
-  minutes += (minutes + time) % 2
-  hours += Math.floor((minutes + time) / 2)
+  minutes += time % 60
+  hours += Math.floor(time / 60)
+
+  if (minutes >= 60) {
+    minutes -= 60
+    hours++
+  }
   if (hours >= 24) {
     hours -= 24
   }
-  return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}`
+  // return `${hours}:${minutes < 10 ? '0' : ''}${minutes}`
+  const returnHours = hours !== 0 ? `${hours}` : '00'
+  const returnMinutes = minutes < 10 ? `0${minutes}` : minutes
+  return `${returnHours}:${returnMinutes}`
 }
 
 // TODO: change the exported value to be the name of the function you defined

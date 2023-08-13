@@ -117,7 +117,7 @@ function assThree(str, num) {
     hoursString === "9"
 
   ) {
-    hoursString = `0${hoursString}`
+    hoursString = `${hoursString}`
   }
 
 

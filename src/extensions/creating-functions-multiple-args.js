@@ -27,7 +27,13 @@ function twoNumbers(lower, upper) {
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function shout(string, number) {
+  let capitalString = string.toUpperCase()
+  for (let index = 0; index < number; index++) {
+    capitalString += '!'
+  }
+  return capitalString
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -39,10 +45,24 @@ function twoNumbers(lower, upper) {
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
-
+function newTime(time, minutesToAdd) {
+  const split = time.split(':')
+  let hours = +split[0]
+  let minutes = +split[1]
+  minutes += minutesToAdd
+  while (minutes >= 60) {
+    hours += 1
+    minutes -= 60
+  }
+  if (hours >= 24) {
+    hours = hours - 24
+  }
+  const newTime = hours + ':' + minutes
+  return newTime
+}
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: twoNumbers, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  b: shout, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: newTime // etc
 }

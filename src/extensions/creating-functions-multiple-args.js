@@ -89,7 +89,7 @@ function assThree(str, num) {
   console.log(totalMinutes)
 
   let reCalcHours = Math.floor(totalMinutes / 60)
-  let minLeft = totalMinutes - (reCalcHours * 60) 
+  let minLeft = totalMinutes - (reCalcHours * 60)
 
 
   console.log(minLeft)
@@ -105,16 +105,21 @@ function assThree(str, num) {
 
   console.log(reCalcHours)
   let hoursString = reCalcHours.toString()
+  if (hoursString === "0") {
+    hoursString += "0"
+  }
   let minString = minLeft.toString()
+
+
   let newTimeString = hoursString + ":" + minString
 
-  // console.log(newTimeString)
+  console.log(newTimeString)
   return newTimeString
 }
 
 
 
-assThree("23:50", 30)
+assThree("00:20", 30)
 
 
 

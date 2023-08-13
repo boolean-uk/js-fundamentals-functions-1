@@ -77,8 +77,7 @@ function arrayCounter(arrayOfStrings)
 // TODO: write code below
 function addEdward(personStatus)
 {
-  if (!personStatus.hasOwnProperty("edward"))
-  {
+  if (personStatus.edward === undefined) {
     personStatus.edward = "amazing";
   }
   return personStatus

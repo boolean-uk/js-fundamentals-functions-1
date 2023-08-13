@@ -81,7 +81,7 @@ function assThree(str, num) {
   const [strHours, strMinutes] = str.split(':').map(Number);
   console.log(strHours)
   console.log(strMinutes)
-
+  let zero = "0"
   let hoursToMinutes = strHours * 60
   console.log(hoursToMinutes)
 
@@ -105,13 +105,42 @@ function assThree(str, num) {
 
   console.log(reCalcHours)
   let hoursString = reCalcHours.toString()
-  if (hoursString === "0") {
-    hoursString += "0"
+  if (hoursString === "0" ||
+    hoursString === "1" ||
+    hoursString === "2" ||
+    hoursString === "3" ||
+    hoursString === "4" ||
+    hoursString === "5" ||
+    hoursString === "6" ||
+    hoursString === "7" ||
+    hoursString === "8" ||
+    hoursString === "9"
+
+  ) {
+    hoursString = `0${hoursString}`
   }
+
+
   let minString = minLeft.toString()
 
+  if (minString === "0" ||
+    minString === "1" ||
+    minString === "2" ||
+    minString === "3" ||
+    minString === "4" ||
+    minString === "5" ||
+    minString === "6" ||
+    minString === "7" ||
+    minString === "8" ||
+    minString === "9"
 
+  ) {
+    minString = `0${minString}`
+  }
   let newTimeString = hoursString + ":" + minString
+
+
+
 
   console.log(newTimeString)
   return newTimeString
@@ -119,7 +148,7 @@ function assThree(str, num) {
 
 
 
-assThree("00:20", 30)
+assThree("05:00", 5)
 
 
 

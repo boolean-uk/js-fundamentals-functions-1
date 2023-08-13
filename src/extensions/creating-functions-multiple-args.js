@@ -105,19 +105,10 @@ function assThree(str, num) {
 
   console.log(reCalcHours)
   let hoursString = reCalcHours.toString()
-  if (hoursString === "0" ||
-    hoursString === "1" ||
-    hoursString === "2" ||
-    hoursString === "3" ||
-    hoursString === "4" ||
-    hoursString === "5" ||
-    hoursString === "6" ||
-    hoursString === "7" ||
-    hoursString === "8" ||
-    hoursString === "9"
+  if (hoursString === "0" 
 
   ) {
-    hoursString = `${hoursString}`
+    hoursString = `0${hoursString}`
   }
 
 
@@ -148,7 +139,7 @@ function assThree(str, num) {
 
 
 
-assThree("05:00", 5)
+assThree("23:50", 20)
 
 
 

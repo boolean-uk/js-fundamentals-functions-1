@@ -54,11 +54,13 @@ function newTime(time, minutesToAdd) {
     hours += 1
     minutes -= 60
   }
-  if (hours >= 24) {
-    hours = hours - 24
+  while (hours >= 24) {
+    hours -= 24
   }
-  const newTime = hours + ':' + minutes
-  return newTime
+  const shouldWePad = split[0].length === 2 && hours < 10
+  const newHours = shouldWePad ? '0' + hours : String(hours)
+  const newMinutes = String(minutes).padStart(2, '0')
+  return newHours + ':' + newMinutes
 }
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

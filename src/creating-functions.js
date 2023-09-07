@@ -7,8 +7,8 @@
 // 2      | 3
 //
 // TODO: write code below
-function Increments(number){
-  return number+=1
+function Increments(number) {
+  return (number += 1)
 }
 console.log(`${Increments(3)}`)
 
@@ -23,20 +23,20 @@ console.log(`${Increments(3)}`)
 
 // TODO: write code below
 function capitalizeString(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  return str.charAt(0).toUpperCase() + str.slice(1)
 }
 console.log(capitalizeString('apple'))
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
-//d
+// d
 // Example Input an Output:
 //
 // Input  | Output
 // edward | Hi, Edward :)
 // Aiyana | Hi, Aiyana :)
 //
-function nameWithSmiley(name){
-  const capitalizedName = capitalizeString(name);
+function nameWithSmiley(name) {
+  const capitalizedName = capitalizeString(name)
   return `Hi, ${capitalizedName} :)`
 }
 console.log(nameWithSmiley('edward'))
@@ -54,6 +54,16 @@ console.log(nameWithSmiley('edward'))
 //
 // TODO: write code below
 
+function countStringsInArray(arr) {
+  let count = 0
+  for (const item of arr) {
+    if (typeof item === 'string') {
+      count++
+    }
+  }
+  return count
+}
+console.log(countStringsInArray('Eduard'))
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:

@@ -26,14 +26,6 @@ const oneAddedToFive = addOneToNumber(5)
 
 // TODO: write code below
 
-// function capitaliseStrings (string) {
-//   const str = string;
-//   const str2 = str.toUpperCase;
-//  return console.log(str2)
-// }
-
-
-
 function capitaliseString (str) {
   const str2 = str.charAt(0).toUpperCase() + str.slice(1)
   return str2
@@ -52,6 +44,14 @@ console.log(capitalisedPotato);
 //
 // TODO: write code below
 
+function helloSmile (str) {
+  const str2 = str.charAt(0).toUpperCase() + str.slice(1) 
+  return 'Hi, ' + str2 + ' :)'
+} 
+
+const helloDan = helloSmile ('dan')
+console.log(helloDan)
+
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -64,6 +64,11 @@ console.log(capitalisedPotato);
 //
 // TODO: write code below
 
+function arrayLength (array) {
+  return array.length
+}
+console.log(arrayLength(['cat', 10, 'dog', true, { p: 0, k: 'potato'},'peanut juice']))
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -74,6 +79,21 @@ console.log(capitalisedPotato);
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+
+function tellEd (object) {
+  //check if edward:amazing is found in object
+  if (object === { edward:'amazing' } ) {
+    return
+  }
+  //add edward:amazing to the object
+  const awesome = (object.edward = 'amazing')
+  return awesome 
+}
+
+const edwardAmazing = tellEd({ dan: 'exhausted' })
+
+console.log(edwardAmazing)
+
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

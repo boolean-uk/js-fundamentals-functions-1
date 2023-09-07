@@ -75,11 +75,21 @@ console.log(countStringsInArray('Eduard'))
 //
 // TODO: write code below
 
+function addPropertyEdward(obj){
+  if (!obj.hasOwnProperty('edward'))
+  {
+    obj.edward = 'amazing'}
+  
+return obj;
+} 
+console.log(addPropertyEdward({}))
+
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: Increments, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalizeString, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: nameWithSmiley, // etc
+  d: countStringsInArray,
+  e: addPropertyEdward,
 }

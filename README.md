@@ -35,10 +35,12 @@ In this exercise you will first call some predefined functions and then create y
 - To verify your solutions, run the test suite by running the `npx jasmine` command followed by the path to the corresponding test file for each `src/.js` file above, eg:
 
     `npx jasmine spec/calling-functions.spec.js` (Core criteria)
+  
     `npx jasmine spec/extensions/creating-functions-multiple-args.spec.js` (Extension criteria)
 - Alternatively, run:
 
   `npm test` (Core criteria)
+  
   `npm run test-extension` (Extension criteria)
 
 - To begin with, almost all of the tests will fail - only the example tests will pass with a green `.` You'll see many red `F`s in your console, like the image below:

@@ -18,8 +18,6 @@ function numRange(num1, num2) {
   return out
 }
 
-console.log(numRange(1, 5))
-
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -69,6 +67,7 @@ function addTime(current, passed) {
   min += passed
   if (min > 60) {
     const hoursPassed = Math.floor(min / 60)
+    console.log('days passed: ', hoursPassed / 24)
     if (hoursPassed > 0) {
       min -= hoursPassed * 60
     }
@@ -89,7 +88,7 @@ function addTime(current, passed) {
   return hourString + ':' + minString
 }
 
-console.log(addTime('12:00', 2885))
+console.log(addTime('12:00', 28800))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

@@ -47,22 +47,20 @@ const ohNo = (string, num) => {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 const timeMod = (string, num) => {
-  let timeArray = string.split(':')
-  let numHours = timeArray[0] *= 60
-  let numMins = parseInt(timeArray[1])
-  let totalTimeInMins = (numHours + numMins) + num
-  
+  const timeArray = string.split(':')
+  const numHours = (timeArray[0] *= 60)
+  const numMins = parseInt(timeArray[1])
+  const totalTimeInMins = numHours + numMins + num
   let divHours = Math.floor(totalTimeInMins / 60) % 24
   let divMinutes = totalTimeInMins % 60
 
-  let divMinutesStr = divMinutes.toString()
+  const divMinutesStr = divMinutes.toString()
 
   if (divMinutesStr.length === 1) {
     divMinutes = divMinutesStr.padStart(2, '0')
   }
-  
   if (divHours === 0) {
-    divHours = divHours.toString().padStart(2, '0') 
+    divHours = divHours.toString().padStart(2, '0')
   }
 
   return divHours + ':' + divMinutes

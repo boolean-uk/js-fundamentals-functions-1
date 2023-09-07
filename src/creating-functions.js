@@ -6,7 +6,13 @@
 // 1      | 2
 // 2      | 3
 //
+
 // TODO: write code below
+
+function incriment(number) {
+  const result1 = number + 1
+  return result1
+}
 
 // 2. Define a function that capitalises any string
 
@@ -19,6 +25,11 @@
 
 // TODO: write code below
 
+function capitalise(str) {
+  const result2 = str.charAt(0).toUpperCase() + str.slice(1, str.length)
+  return result2
+}
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +40,11 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+
+function smile(name) {
+  const result3 = `Hi, ` + name[0].toUpperCase() + name.slice(1) + ` :)`
+  return result3
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -42,6 +58,16 @@
 //
 // TODO: write code below
 
+function howManyStrings(array) {
+  let str = 0
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'string') {
+      str++
+    }
+  }
+  return str
+}
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -53,11 +79,18 @@
 //
 // TODO: write code below
 
+function edFunction(obj) {
+  if (obj.edward === undefined) {
+    obj.edward = 'amazing'
+  }
+  return obj
+}
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: incriment, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalise, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smile, // etc
+  d: howManyStrings, //
+  e: edFunction //
 }

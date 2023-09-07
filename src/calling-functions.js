@@ -23,12 +23,28 @@ function sayHelloManyTimes(name, times) {
 
 // 1. Set this variable to 'Hello' by calling the sayHello function
 const hello = ''
+function sayHello (){
+  return 'Hello'
+}
+const message = sayHello()
+console.log(message)
+
 
 // 2. Set this variable variable to 'Hello Jane' calling the sayHelloTo function
 const helloToJane = ''
+function sayHelloTo (){
+  return 'Hello Jane'
+}
+const greeting = sayHelloTo()
+console.log(greeting)
 
 // 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
 const helloToBob3Times = ''
+function sayHelloManyTimes(){
+  return 'Hello Bob'
+}
+const greetings2 = sayHelloManyTimes()
+console.log(greetings2)
 
 // do not edit below this line
 module.exports = {

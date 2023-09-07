@@ -1,5 +1,4 @@
 // 1. Define a function that takes a number and increments it by 1.
-//
 // Example Input and Output:
 //
 // Input  | Output
@@ -8,8 +7,15 @@
 //
 // TODO: write code below
 
-// 2. Define a function that capitalises any string
+function incrementation(number){
+  return number + 1
+} 
+const originalNumber = 100;
+const incrementNumber = incrementation(originalNumber);
+console.log(incrementNumber)
 
+
+// 2. Define a function that capitalises any string
 // Example Input and Output:
 //
 // Input | Output
@@ -18,6 +24,15 @@
 // Hello | Hello
 
 // TODO: write code below
+
+const str = 'Hi Boolean'
+function capitalisation(){
+  return str.toUpperCase();
+}
+const string = 'Hi Boolean'
+const capiTal = capitalisation(string)
+console.log(capiTal)
+
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -30,7 +45,19 @@
 //
 // TODO: write code below
 
-// 4. Define a function that takes an array of data and returns how many strings are in the array.
+function addSmiley(name) {
+const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+
+const nameWithSmiley = capitalizedName + " :)";
+
+  return nameWithSmiley;
+}
+const personName = 'papi';
+const greeting = addSmiley(personName);
+console.log(greeting); 
+
+
+// 4.Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
 //
@@ -42,6 +69,22 @@
 //
 // TODO: write code below
 
+function countStringsInArray(arr) {
+  let count = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'string') {
+      count++;
+    }
+  }
+
+  return count;
+}
+const data = [1, "hello", true, "world", 42];
+const stringCount = countStringsInArray(data);
+console.log(stringCount); 
+
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,6 +95,20 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+
+function addEdwardProperty(object) {
+  if (!object.hasOwnProperty('edward')) {
+    object.edward = 'amazing';
+  }
+  return object;
+}
+const example1 = {};
+const example2 = { aiyana: 'fantastic' };
+const example3 = { edward: 'fabulous' };
+
+console.log(addEdwardProperty(example1)); 
+console.log(addEdwardProperty(example2));
+console.log(addEdwardProperty(example3)); 
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function numSequence(lowerEnd, upperEnd) {
+  const arr = []
+  for (let i = lowerEnd; i <= upperEnd; i++) {
+    arr.push(i)
+  }
+  return arr
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -22,6 +29,12 @@
 //
 // TODO: write code below
 
+function dramatizedText(string, urgency) {
+  let count = Math.max(urgency, 0)
+  return string.toUpperCase() + `!`.repeat(count)
+}
+
+
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +46,25 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutes(originalTimeHHMM, addedMinutes) {
+  // splitting the string to get hours and minutes
+  const arrTime = originalTimeHHMM.split(`:`)
+  let hour = parseInt(arrTime[0])
+  let minutes = parseInt(arrTime[1])
+  // let finalTime = new Date()
+  // finalTime.setUTCHours(hour, minutes + addedMinutes)
+  // finalTime.setUTCMilliseconds(hour * 24 * 60 * 1000 + (minutes + addedMinutes) * 60 * 1000)
+  // finalStr = finalTime.getUTCHours() + `:` + finalTime.getUTCMinutes()
+  finalStr = (hour + parseInt((minutes + addedMinutes) / 60)) % 24 + `:` + ((minutes + addedMinutes) % 60).toString().padStart(2, `0`)
+  if ((hour + parseInt((minutes + addedMinutes) / 60)) % 24 === 0) {
+    finalStr = `0` + finalStr
+  }
+  return finalStr
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numSequence, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: dramatizedText, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutes // etc
 }

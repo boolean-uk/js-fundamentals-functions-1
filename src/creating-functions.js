@@ -7,7 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function plusOne(number){
+  return (number += 1)
+}
+console.log(plusOne(2))
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:

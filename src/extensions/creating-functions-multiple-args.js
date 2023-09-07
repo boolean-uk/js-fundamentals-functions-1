@@ -10,6 +10,16 @@
 //
 // TODO: write code below
 
+function numRange(num1, num2) {
+  const out = []
+  for (let i = num1; i <= num2; i++) {
+    out[out.length] = i
+  }
+  return out
+}
+
+console.log(numRange(1, 5))
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -22,6 +32,13 @@
 //
 // TODO: write code below
 
+function panicFunction(msg, sos) {
+  let out = msg.toUpperCase()
+  for (let i = 0; i < sos; i++) {
+    out += '!'
+  }
+  return out
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -34,9 +51,49 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function addTime(current, passed) {
+  let hour
+  let min
+  // get hour and min from string
+  if (current[1] === ':') {
+    hour = Number(current[0])
+    min = Number(current[2] + current[3])
+  } else if (current[2] === ':') {
+    hour = Number(current[0] + current[1])
+    min = Number(current[3] + current[4])
+  } else {
+    return 'ERROR: invalid time format'
+  }
+
+  // time calculation
+  min += passed
+  if (min > 60) {
+    const hoursPassed = Math.floor(min / 60)
+    if (hoursPassed > 0) {
+      min -= hoursPassed * 60
+    }
+    hour += hoursPassed
+    if (hour > 23) {
+      hour = 0 + (hour % 24)
+    }
+  }
+
+  // add 0s if needed
+  const hourString = hour.toString()
+  const minString = min.toString()
+  if (hour === 0) {
+    return '0' + hourString + ':' + minString
+  } else if (minString.length === 1) {
+    return hourString + ':' + '0' + minString
+  }
+  return hourString + ':' + minString
+}
+
+console.log(addTime('12:00', 2885))
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numRange, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: panicFunction, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addTime // etc
 }

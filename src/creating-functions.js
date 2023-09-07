@@ -28,13 +28,18 @@ function capitalizeString(str) {
 console.log(capitalizeString('apple'))
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
-//
-// Example Input and Output:
+//d
+// Example Input an Output:
 //
 // Input  | Output
 // edward | Hi, Edward :)
 // Aiyana | Hi, Aiyana :)
 //
+function nameWithSmiley(name){
+  const capitalizedName = capitalizeString(name);
+  return `Hi, ${capitalizedName} :)`
+}
+console.log(nameWithSmiley('edward'))
 // TODO: write code below
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.

@@ -9,6 +9,7 @@ function sayHello() {
 function sayHelloTo(name) {
   return 'Hello ' + name + '!'
 }
+
 /* eslint-disable no-unused-vars */
 function sayHelloManyTimes(name, times) {
   let hello = ''
@@ -22,13 +23,16 @@ function sayHelloManyTimes(name, times) {
 // TODO: Add and update code here to make the tests pass
 
 // 1. Set this variable to 'Hello' by calling the sayHello function
-const hello = ''
+const hello = sayHello('Hello')
+console.log(hello)
 
-// 2. Set this variable variable to 'Hello Jane' calling the sayHelloTo function
-const helloToJane = ''
+// 2. Set this variable to 'Hello Jane' calling the sayHelloTo function
+const helloToJane = sayHelloTo('Jane')
+console.log(helloToJane)
 
 // 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
-const helloToBob3Times = ''
+const helloToBob3Times = sayHelloManyTimes('Bob', 3)
+console.log(helloToBob3Times)
 
 // do not edit below this line
 module.exports = {

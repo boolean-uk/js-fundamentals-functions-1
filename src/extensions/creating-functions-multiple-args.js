@@ -2,6 +2,14 @@
 // The function should return an array containing all the numbers between
 // lower and upper, including lower and upper.
 //
+function lowAndHigh(low, high) {
+  const numberarray = []
+  for (let i = low; i <= high; i++) {
+    numberarray.push(i)
+  }
+  return numberarray
+}
+console.log(lowAndHigh(-1, 1))
 // Example Input and Output:
 // Input        | Output
 // 1, 3         | [1,2,3]
@@ -14,6 +22,14 @@
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
 // determined by the number argument.
+
+function formatWithExclamation(str, num) {
+  const uppercase = str.toUpperCase()
+  const exclamation = '!'.repeat(num)
+  const result = uppercase + exclamation
+  return result
+}
+console.log(formatWithExclamation('good', 7))
 //
 // Example Input and Output:
 // Input        | Output
@@ -25,6 +41,7 @@
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
+
 // Example Input and Output:
 // Input        | Output
 // '7:50', 4    | '7:54'
@@ -36,7 +53,7 @@
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  a: lowAndHigh, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: formatWithExclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
   c: undefined // etc
 }

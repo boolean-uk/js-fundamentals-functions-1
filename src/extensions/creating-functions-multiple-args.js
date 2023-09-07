@@ -31,12 +31,14 @@ function numRange(num1, num2) {
 // TODO: write code below
 
 function panicFunction(msg, sos) {
-  let out = msg.toUpperCase()
+  msg = msg.toUpperCase()
   for (let i = 0; i < sos; i++) {
-    out += '!'
+    msg += '!'
   }
-  return out
+  return msg
 }
+
+console.log(panicFunction('looool', 5))
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //

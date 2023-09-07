@@ -23,8 +23,9 @@ function numIncrement(num) {
 // TODO: write code below
 
 function capitaliseString(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1, str.length)
+  return str[0].toUpperCase() + str.slice(1)
 }
+console.log(capitaliseString('hello'))
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -41,6 +42,8 @@ function smile(name) {
   return 'Hi, ' + name[0].toUpperCase() + name.slice(1) + ' :)'
 }
 
+console.log(smile('ryan'))
+
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -53,6 +56,8 @@ function smile(name) {
 //
 // TODO: write code below
 
+const testArray = ['1', '2', '3', 5, 5, '3']
+
 function howManyStrings(array) {
   let str = 0
   for (let i = 0; i < array.length; i++) {
@@ -62,6 +67,8 @@ function howManyStrings(array) {
   }
   return str
 }
+
+console.log(howManyStrings(testArray))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -74,12 +81,17 @@ function howManyStrings(array) {
 //
 // TODO: write code below
 
+const testObj = { brandon: 'fabulous' }
+
 function edFunction(obj) {
+  // check for edward
   if (obj.edward === undefined) {
+    // set edward to amazing if undefined
     obj.edward = 'amazing'
   }
   return obj
 }
+console.log(edFunction(testObj))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

@@ -67,7 +67,7 @@ function addTime(current, passed) {
 
   // time calculation
   min += passed
-  if (min > 60) {
+  if (min > 59) {
     const hoursPassed = Math.floor(min / 60)
     console.log('days passed: ', hoursPassed / 24)
     if (hoursPassed > 0) {
@@ -91,7 +91,7 @@ function addTime(current, passed) {
   return hourString + ':' + minString
 }
 
-console.log(addTime('12:00', 35280))
+console.log(addTime('16:00', 60))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

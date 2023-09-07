@@ -7,6 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
+function Increments(number){
+  return number+=1
+}
+console.log(`${Increments(3)}`)
 
 // 2. Define a function that capitalises any string
 

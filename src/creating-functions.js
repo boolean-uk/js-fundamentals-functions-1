@@ -76,6 +76,6 @@ module.exports = {
   a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
   b: firstLetterUpper, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: greetings, // etc
-  d: undefined,
-  e: undefined
+  d: countStr,
+  e: addProperty
 }

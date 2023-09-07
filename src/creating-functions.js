@@ -36,7 +36,7 @@ function stringCapitalise(inputString) {
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-const inputName = 'Ed'
+
 function greeter(inputName) {
   return `Hi, ${inputName[0].toUpperCase()}${inputName.slice(
     1,
@@ -55,8 +55,6 @@ function greeter(inputName) {
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-
-const arrayInput = ['ed', 1, 'both', 2, 'string']
 
 function stringCounter(arrayInput) {
   let stringCount = 0
@@ -79,7 +77,6 @@ function stringCounter(arrayInput) {
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-const inputObject = { charlotte: 'yes', edward: 'fabulous' }
 
 function addEd(inputObject) {
   const keys = Object.keys(inputObject)
@@ -89,8 +86,6 @@ function addEd(inputObject) {
   }
   return inputObject
 }
-
-console.log('assignEd(inputObject) :>> ', addEd(inputObject))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

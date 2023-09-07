@@ -51,7 +51,14 @@ function greetings(name){
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+const countStr = (arr) => {
+  let count = 0
 
+  arr.forEach((item) => (typeof item === 'string' ? count++ : null))
+
+  return count
+}
+// 5
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -62,7 +69,8 @@ function greetings(name){
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+const addProperty = (obj) =>
+  'edward' in obj ? { ...obj } : { ...obj, edward: 'amazing' }
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: increments, // 1. change undefined to be the name of the function you defined for the first TODO

@@ -8,6 +8,13 @@
 //
 // TODO: write code below
 
+function addOneToNumber(number) {
+  return ++number
+}
+
+const oneAddedToFive = addOneToNumber(5)
+//console.log(oneAddedToFive)
+
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -19,11 +26,26 @@
 
 // TODO: write code below
 
+// function capitaliseStrings (string) {
+//   const str = string;
+//   const str2 = str.toUpperCase;
+//  return console.log(str2)
+// }
+
+
+
+function capitaliseString (str) {
+  const str2 = str.charAt(0).toUpperCase() + str.slice(1)
+  return str2
+}
+
+const capitalisedPotato = capitaliseString('potato')
+console.log(capitalisedPotato);
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
-// Example Input and Output:
-//
+// Example
 // Input  | Output
 // edward | Hi, Edward :)
 // Aiyana | Hi, Aiyana :)

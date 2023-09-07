@@ -13,7 +13,7 @@ function addOneToNumber(number) {
 }
 
 const oneAddedToFive = addOneToNumber(5)
-//console.log(oneAddedToFive)
+console.log(oneAddedToFive)
 
 // 2. Define a function that capitalises any string
 
@@ -23,16 +23,15 @@ const oneAddedToFive = addOneToNumber(5)
 // hello | Hello
 // world | World
 // Hello | Hello
-
 // TODO: write code below
 
-function capitaliseString (str) {
+function capitaliseString(str) {
   const str2 = str.charAt(0).toUpperCase() + str.slice(1)
   return str2
 }
 
 const capitalisedPotato = capitaliseString('potato')
-console.log(capitalisedPotato);
+console.log(capitalisedPotato)
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -44,12 +43,11 @@ console.log(capitalisedPotato);
 //
 // TODO: write code below
 
-function helloSmile (str) {
-  const str2 = str.charAt(0).toUpperCase() + str.slice(1) 
+function helloSmile(str) {
+  const str2 = str.charAt(0).toUpperCase() + str.slice(1)
   return 'Hi, ' + str2 + ' :)'
-} 
-
-const helloDan = helloSmile ('dan')
+}
+const helloDan = helloSmile('dan')
 console.log(helloDan)
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
@@ -64,10 +62,15 @@ console.log(helloDan)
 //
 // TODO: write code below
 
-function arrayLength (array) {
+function arrayLength(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] !== 'string') {
+      array.splice(i, 1)
+    }
+  }
   return array.length
 }
-console.log(arrayLength(['cat', 10, 'dog', true, { p: 0, k: 'potato'},'peanut juice']))
+console.log(arrayLength(['potato']))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -80,26 +83,24 @@ console.log(arrayLength(['cat', 10, 'dog', true, { p: 0, k: 'potato'},'peanut ju
 //
 // TODO: write code below
 
-function tellEd (object) {
-  //check if edward:amazing is found in object
-  if (object === { edward:'amazing' } ) {
-    return
+// I had to Google how to resolve the following esling error: Do not access Object.prototype method 'hasOwnProperty' from target object  no-prototype-builtins. That's why line 89 looks the way it does.
+function tellEd(obj) {
+  // check if edward:amazing is found in object
+  if (Object.prototype.hasOwnProperty.call(obj, 'edward')) {
+    return obj
   }
-  //add edward:amazing to the object
-  const awesome = (object.edward = 'amazing')
-  return awesome 
+  // add edward:amazing to the object
+  obj.edward = 'amazing'
+  return obj
 }
-
-const edwardAmazing = tellEd({ dan: 'exhausted' })
-
+const edwardAmazing = tellEd({})
 console.log(edwardAmazing)
-
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: addOneToNumber, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitaliseString, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: helloSmile, // etc
+  d: arrayLength,
+  e: tellEd
 }

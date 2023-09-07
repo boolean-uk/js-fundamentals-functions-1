@@ -7,6 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
+function Increments(number) {
+  return (number += 1)
+}
+console.log(`${Increments(3)}`)
 
 // 2. Define a function that capitalises any string
 
@@ -18,16 +22,24 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitalizeString(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+console.log(capitalizeString('apple'))
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
-//
-// Example Input and Output:
+// d
+// Example Input an Output:
 //
 // Input  | Output
 // edward | Hi, Edward :)
 // Aiyana | Hi, Aiyana :)
 //
+function nameWithSmiley(name) {
+  const capitalizedName = capitalizeString(name)
+  return `Hi, ${capitalizedName} :)`
+}
+console.log(nameWithSmiley('edward'))
 // TODO: write code below
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
@@ -42,6 +54,16 @@
 //
 // TODO: write code below
 
+function countStringsInArray(arr) {
+  let count = 0
+  for (const item of arr) {
+    if (typeof item === 'string') {
+      count++
+    }
+  }
+  return count
+}
+console.log(countStringsInArray('Eduard'))
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -53,11 +75,21 @@
 //
 // TODO: write code below
 
+function addPropertyEdward(obj){
+  if (!obj.hasOwnProperty('edward'))
+  {
+    obj.edward = 'amazing'}
+  
+return obj;
+} 
+console.log(addPropertyEdward({}))
+
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: Increments, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalizeString, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: nameWithSmiley, // etc
+  d: countStringsInArray,
+  e: addPropertyEdward,
 }

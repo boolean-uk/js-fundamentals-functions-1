@@ -22,7 +22,10 @@ console.log(`${Increments(3)}`)
 // Hello | Hello
 
 // TODO: write code below
-
+function capitalizeString(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalizeString('apple'))
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //

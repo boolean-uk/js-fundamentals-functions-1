@@ -7,10 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
-function plusOne(number){
-  return (number += 1)
+function increments(number) {
+  return number + 1
 }
-console.log(plusOne(2))
+
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -21,6 +21,10 @@ console.log(plusOne(2))
 // Hello | Hello
 
 // TODO: write code below
+// eslint-disable-next-line no-unused-vars
+function firstLetterUpper(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -58,8 +62,8 @@ console.log(plusOne(2))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
+  a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: firstLetterUpper, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: undefined, // etc
   d: undefined,
   e: undefined

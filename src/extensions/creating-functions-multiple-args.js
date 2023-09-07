@@ -80,17 +80,18 @@ function addTime(current, passed) {
   }
 
   // add 0s if needed
-  const hourString = hour.toString()
-  const minString = min.toString()
+  let hourString = hour.toString()
+  let minString = min.toString()
   if (hour === 0) {
-    return '0' + hourString + ':' + minString
-  } else if (minString.length === 1) {
-    return hourString + ':' + '0' + minString
+    hourString = '0' + hourString
+  }
+  if (minString.length === 1) {
+    minString = '0' + minString
   }
   return hourString + ':' + minString
 }
 
-console.log(addTime('12:00', 28800))
+console.log(addTime('12:00', 35280))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

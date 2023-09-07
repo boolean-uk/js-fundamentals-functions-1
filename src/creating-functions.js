@@ -36,6 +36,9 @@ function firstLetterUpper(str) {
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function greetings(name){
+  return 'Hi, ' + name.charAt(0).toUpperCase() + name.slice(1) + " :)"
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -64,7 +67,7 @@ function firstLetterUpper(str) {
 module.exports = {
   a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
   b: firstLetterUpper, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
+  c: greetings, // etc
   d: undefined,
   e: undefined
 }

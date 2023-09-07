@@ -34,9 +34,31 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+const timeMod = (string, num) => {
+  const timeArray = string.split(':')
+  const numHours = parseInt(timeArray[0])
+  const numMins = parseInt(timeArray[1])
+  let minutes = numHours * 60 + numMins
+  minutes += num
+
+  const divHours = Math.floor(minutes / 60) % 24
+  const divMinutes = minutes % 60
+
+  let divStrHours = divHours.toString()
+
+  const divStrMinutes = divMinutes.toString().padStart(2, '0')
+  if (divStrHours === '0') {
+    divStrHours = divStrHours.padStart(2, '0')
+  }
+
+  return divStrHours + ':' + divStrMinutes
+}
+
+console.log(timeMod('01:50', 30))
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: timeMod // etc
 }

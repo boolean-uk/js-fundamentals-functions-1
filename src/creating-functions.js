@@ -1,5 +1,4 @@
 // 1. Define a function that takes a number and increments it by 1.
-//
 // Example Input and Output:
 //
 // Input  | Output
@@ -7,6 +6,11 @@
 // 2      | 3
 //
 // TODO: write code below
+
+function increments(number) {
+  return ++number
+}
+
 
 // 2. Define a function that capitalises any string
 
@@ -19,6 +23,10 @@
 
 // TODO: write code below
 
+function string(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +37,10 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+
+function sayHello(name) {
+  return `Hi, ${name.charAt(0).toUpperCase() + name.slice(1)} :)`
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,7 +53,13 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+const countStr = (arr) => {
+  let count = 0
 
+  arr.forEach((item) => (typeof item === 'string' ? count++ : null))
+
+  return count
+}
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +70,13 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+const addProperty = (obj) =>
+  'edward' in obj ? { ...obj } : { ...obj, edward: 'amazing' }
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: string, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: sayHello, // etc
+  d: countStr,
+  e: addProperty
 }

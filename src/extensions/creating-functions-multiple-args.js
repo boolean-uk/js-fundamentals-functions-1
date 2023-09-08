@@ -10,6 +10,15 @@
 //
 // TODO: write code below
 
+function lowerToUpper(lowerNum, upperNum) {
+  const array = []
+  for (let i = lowerNum; i <= upperNum; i++) {
+    array.push(i)
+  }
+  return array
+}
+lowerToUpper(-1, 1)
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +30,13 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function capsExclamationMarks(str, num) {
+  const toCapitals = str.toUpperCase()
+  const exMarkNum = '!'.repeat(num)
+  return toCapitals + exMarkNum
+}
+// console.log(capsExclamationMarks('error', 10))
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -34,9 +50,34 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function adjustTime(stringTime, timeIncrease) {
+  const splitTime = stringTime.split(':')
+
+  let hours = splitTime[0]
+  let mins = splitTime[1]
+
+  mins = parseInt(mins) + timeIncrease
+  console.log('new mins:', mins)
+
+  if (mins > 59) {
+    hours = parseInt(hours) + Math.floor(mins / 60)
+    mins %= 60
+  }
+
+  // console.log('New hours:', hours)
+  // console.log('New mins:', mins)
+
+  if (hours % 24 === 0) {
+    hours = '00'
+  }
+  return hours.toString() + ':' + mins.toString().padStart(2, '0')
+}
+
+console.log(adjustTime('7:50', 72))
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: lowerToUpper, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: capsExclamationMarks, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: adjustTime // etc
 }

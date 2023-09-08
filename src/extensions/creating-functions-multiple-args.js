@@ -63,6 +63,7 @@ function addMinutes(originalTimeHHMM, addedMinutes) {
     // eslint-disable-next-line no-undef
     finalStr = `0` + finalStr
   }
+  // eslint-disable-next-line no-undef
   return finalStr
 }
 

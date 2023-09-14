@@ -101,9 +101,9 @@ console.log(addEdward(objectInput))
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increment1, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalFirst, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileyFace, // etc
+  d: dataArray,
+  e: addEdward
 }

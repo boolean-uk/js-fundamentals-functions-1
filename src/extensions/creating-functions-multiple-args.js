@@ -57,16 +57,21 @@ function addTime(string, number) {
   const timeSplit = string.split(':')
   const hrs = parseInt(timeSplit[0]) // These parseInts take string numbers and make them into usable numbers
   const mins = parseInt(timeSplit[1])
-  const allMins = hrs * 60 + mins
+  const allAsMins = hrs * 60 + mins
 
-  const sum = allMins + number
-  console.log(sum)
+  const sum = allAsMins + number
+  const newHours = Math.floor(sum / 60)
+  const newMins = sum % 60
 
-  return sum
+  let newTime = newHours.toString() + ':' + newMins.toString()
+  if (newTime.length === 3) {
+    newTime = newHours.toString() + ':' + '0' + newMins.toString()
+  }
+  return newTime
 }
 
 // USE .toString to return number at end back to a string
-addTime('1:01', 120)
+console.log(addTime('7:50', 4))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

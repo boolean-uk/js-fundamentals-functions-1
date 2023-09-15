@@ -60,10 +60,16 @@ function addTime(string, number) {
   const allAsMins = hrs * 60 + mins
 
   const sum = allAsMins + number
-  const newHours = Math.floor(sum / 60)
+  const newHours = Math.floor(sum / 60) % 24
   const newMins = sum % 60
 
-  let newTime = newHours.toString() + ':' + newMins.toString()
+  let newHoursString = newHours.toString()
+  if (newHoursString === '0') {
+    newHoursString = '0' + newHoursString
+  }
+  const newMinsString = newMins.toString()
+
+  let newTime = newHoursString + ':' + newMinsString
   if (newTime.length === 3) {
     newTime = newHours.toString() + ':' + '0' + newMins.toString()
   }
@@ -71,7 +77,7 @@ function addTime(string, number) {
 }
 
 // USE .toString to return number at end back to a string
-console.log(addTime('7:50', 4))
+console.log(addTime('23:50', 30))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

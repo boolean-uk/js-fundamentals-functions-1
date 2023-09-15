@@ -18,7 +18,7 @@ function lowAndHigh(low, high) {
   return numbersarray
 }
 
-console.log(lowAndHigh(10, 13))
+// console.log(lowAndHigh(10, 13))
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -38,7 +38,7 @@ function getLoud(str, num) {
   return string + exclamation
 }
 
-console.log(getLoud('disaster', 5))
+// console.log(getLoud('disaster', 5))
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -54,13 +54,17 @@ console.log(getLoud('disaster', 5))
 // TODO: write code below
 
 function addTime(string, number) {
-  string = parseInt(string) % 24
-  const sum = (string + number) % 24
+  const timeSplit = string.split(':')
+  const hrs = parseInt(timeSplit[0])
+  const mins = parseInt(timeSplit[1])
+  console.log(hrs, mins)
+
+  const sum = string + number
   return sum
 }
 
 // USE .toString to return number at end back to a string
-console.log(addTime('12:50', 120))
+addTime('12:50', 120)
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

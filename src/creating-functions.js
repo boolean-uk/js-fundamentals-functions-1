@@ -26,7 +26,7 @@ console.log(incrementNumber(1))
 // TODO: write code below
 
 function capitalize(string) {
-  return string && string[0].toUpperCase() + string.slice(1)
+  return string[0].toUpperCase() + string.slice(1)
 }
 const saying = 'hello'
 
@@ -62,6 +62,7 @@ console.log(smiley('edward'))
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+
 function stringfinder(array) {
   let count = 0
   for (let i = 0; i < array.length; i++) {

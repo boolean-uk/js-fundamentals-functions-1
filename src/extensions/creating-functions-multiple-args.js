@@ -18,7 +18,7 @@ function lowAndHigh(low, high) {
   return numbersarray
 }
 
-console.log(lowAndHigh(-1, 1))
+console.log(lowAndHigh(10, 13))
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -50,11 +50,21 @@ console.log(getLoud('disaster', 5))
 // '11:50', 20  | '12:10'
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
+
 // TODO: write code below
+
+function addTime(string, number) {
+  string = parseInt(string) % 24
+  const sum = (string + number) % 24
+  return sum
+}
+
+// USE .toString to return number at end back to a string
+console.log(addTime('12:50', 120))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: lowAndHigh, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: getLoud, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: addTime // etc
 }

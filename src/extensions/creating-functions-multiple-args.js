@@ -55,16 +55,18 @@ function getLoud(str, num) {
 
 function addTime(string, number) {
   const timeSplit = string.split(':')
-  const hrs = parseInt(timeSplit[0])
+  const hrs = parseInt(timeSplit[0]) // These parseInts take string numbers and make them into usable numbers
   const mins = parseInt(timeSplit[1])
-  console.log(hrs, mins)
+  const allMins = hrs * 60 + mins
 
-  const sum = string + number
+  const sum = allMins + number
+  console.log(sum)
+
   return sum
 }
 
 // USE .toString to return number at end back to a string
-addTime('12:50', 120)
+addTime('1:01', 120)
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

@@ -30,6 +30,10 @@ const helloToJane = sayHelloTo('Jane')
 // 3. Set this variable to 'Hello Bob! Hello Bob! Hello Bob!' calling the sayHelloManyTimes function
 const helloToBob3Times = sayHelloManyTimes('Bob', 3)
 
+console.log(sayHello())
+console.log(sayHelloTo('John'))
+console.log(sayHelloManyTimes('Bob', 3))
+
 // do not edit below this line
 module.exports = {
   a: hello,

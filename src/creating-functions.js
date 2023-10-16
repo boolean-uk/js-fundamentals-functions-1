@@ -7,6 +7,12 @@
 // 2      | 3
 //
 // TODO: write code below
+function increment(number) {
+  return number + 1
+}
+
+// const outputVal = increment(1)
+// console.log(outputVal)
 
 // 2. Define a function that capitalises any string
 
@@ -18,6 +24,11 @@
 // Hello | Hello
 
 // TODO: write code below
+function capitalises(string) {
+  return string[0].toUpperCase() + string.slice(1)
+}
+// const toUpper = capitalises("example")
+// console.log(toUpper)
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -30,6 +41,14 @@
 //
 // TODO: write code below
 
+function addsmile(name) {
+  let nomen = name[0].toUpperCase() + name.slice(1)
+  return 'Hi, ' + nomen + ' :)'
+}
+
+// const nameSmile = addsmile('edward')
+// console.log(nameSmile)
+
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -41,8 +60,24 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+//arr = ['abc', 1, 'test']
+//arr = ['edward', 'aiyana']
+arr = [1, 'edward']
 
-// 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
+function countstring(array) {
+  let count = 0
+  for (i = 0; i < array.length; i ++) {
+    if (typeof array[i] == 'string'){
+      count += 1
+    }
+  }
+  return count
+}
+const count = countstring(arr)
+console.log(count)
+
+// 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist 
+//with a default value of 'amazing'
 //
 // Example Input and Output:
 //
@@ -52,12 +87,24 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+people = {name: 'Kevin', age:30}
+
+function addEdward(object) {
+  let properties = Object.keys(object)
+  if (!properties.includes('edward')) {
+    object.edward = 'amazing'
+  } 
+  return object 
+}
+
+const addingEd = addEdward(people)
+console.log(addingEd)
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increment, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalises, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: addsmile, // etc
+  d: countstring,
+  e: addEdward
 }

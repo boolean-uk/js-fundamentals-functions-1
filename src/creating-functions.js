@@ -7,7 +7,8 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function myfunction(number) {
+  return ++number;}
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -18,7 +19,9 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitalise(str){
+return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+}
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,7 +32,9 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-
+function smiley(str){
+  return 'Hi, '+str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()+' :)'
+  }
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -41,7 +46,15 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-
+function howManyStrings(arr){
+  let i=0
+  for(let j=0;j<arr.length;j++){
+      if(typeof arr[j] ==='string'){
+          i++;
+      }
+  }
+  return i;
+}
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +65,17 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function edwardAmazing(object){
+  if (!object.hasOwnProperty('edward')) {
+    object.edward = 'amazing';
+  }
+  return object
+}
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: myfunction, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalise, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smiley, // etc
+  d: howManyStrings,
+  e: edwardAmazing
 }

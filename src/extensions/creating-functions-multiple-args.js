@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function createNumArray(lower, upper) {
+  const numArray = []
+  for (let i = lower; i <= upper; i++) {
+    numArray.push(i)
+  }
+  return numArray
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,12 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function isShocked(str, num) {
+  for (let i = 1; i <= num; i++) {
+    str += '!'
+  }
+  return str.toUpperCase()
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +46,26 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutes(str, num) {
+  const tmp = str.split(':')
+  let hours = parseInt(tmp[0])
+  let minutes = parseInt(tmp[1]) + num
+  while (minutes >= 60) {
+    hours += 1
+    minutes -= 60
+  }
+  if (hours === 24) {
+    hours = '00'
+  }
+  if (minutes < 10) {
+    minutes = '0' + minutes.toString()
+  }
+  return hours.toString() + ':' + minutes.toString()
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: createNumArray, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: isShocked, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutes // etc
 }

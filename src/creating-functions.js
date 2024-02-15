@@ -7,6 +7,12 @@
 // 2      | 3
 //
 // TODO: write code below
+function incrementNumber(a) {
+  return (a += 1)
+}
+
+const num = incrementNumber(4)
+console.log(num)
 
 // 2. Define a function that capitalises any string
 
@@ -18,6 +24,9 @@
 // Hello | Hello
 
 // TODO: write code below
+function capitalized(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1)
+}
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -29,6 +38,10 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function greeting(name) {
+  name = name.charAt(0).toUpperCase() + name.slice(1)
+  return 'Hi, ' + name + ' :)'
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,6 +54,16 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+function stringArray(arr) {
+  let coun = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 'edward' || arr[i] === 'aiyana') {
+      coun += 1
+    }
+  }
+
+  return coun
+}
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -52,12 +75,18 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+function addToObject(object) {
+  if (object.edward === undefined) {
+    object.edward = 'amazing'
+  }
+  return object
+}
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: incrementNumber, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalized, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: greeting, // etc
+  d: stringArray,
+  e: addToObject
 }

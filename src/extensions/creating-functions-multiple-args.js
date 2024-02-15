@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function createRange(lower, upper) {
+  const range = []
+  for (let i = lower; i <= upper; i++) {
+    range.push(i)
+  }
+  return range
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,9 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function addExclamationMarks(str, num) {
+  return str.toUpperCase() + '!'.repeat(num)
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +43,27 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function calculateNewTime(startTime, minutesToAdd) {
+  const additionalMinutes = minutesToAdd
+  const [startHour, startMinutes] = startTime.split(':')
+  const currentHour = Number(startHour)
+  const currentMinutes = Number(startMinutes)
 
-// TODO: change the exported value to be the name of the function you defined
+  const totalMinutes = currentMinutes + currentHour * 60 + additionalMinutes
+
+  let newHour = Math.floor(totalMinutes / 60)
+  newHour = newHour > 23 ? newHour - 24 : newHour
+  newHour = newHour == 0 ? '0' + newHour : newHour
+
+  let newMinutes = totalMinutes % 60
+  newMinutes = newMinutes < 10 ? '0' + newMinutes : newMinutes
+
+  const newTime = newHour + ':' + newMinutes
+  return newTime
+}
+
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: createRange,
+  b: addExclamationMarks,
+  c: calculateNewTime
 }

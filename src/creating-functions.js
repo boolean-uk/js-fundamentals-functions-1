@@ -7,9 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
+const addexpr = (a) => a + 1
 
 // 2. Define a function that capitalises any string
-
+const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1)
 // Example Input and Output:
 //
 // Input | Output
@@ -29,6 +30,8 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+const smileyCapitalize = (string) =>
+  'Hi, ' + string.charAt(0).toUpperCase() + string.slice(1) + ' :)'
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,6 +44,16 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+function countStrings(array) {
+  let c = 0
+
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'string') {
+      c++
+    }
+  }
+  return c
+}
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -52,12 +65,20 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+function edward(obj) {
+  if ('edward' in obj) {
+    return obj
+  } else {
+    obj.edward = 'amazing'
+  }
 
+  return obj
+}
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: addexpr, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalize, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileyCapitalize, // etc
+  d: countStrings,
+  e: edward
 }

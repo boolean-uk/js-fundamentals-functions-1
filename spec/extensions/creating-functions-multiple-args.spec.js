@@ -31,7 +31,7 @@ describe('Creating Functions Multiple Args:', () => {
     it('adds time', () => {
       expect(c('7:50', 72)).toEqual('9:02')
     })
-    it('adds time', () => {
+    *it('adds time', () => {
       expect(c('11:50', 20)).toEqual('12:10')
     })
     it('adds time', () => {

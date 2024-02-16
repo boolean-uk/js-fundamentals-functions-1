@@ -25,19 +25,19 @@ describe('Creating Functions Multiple Args:', () => {
   })
 
   describe('Task 3', () => {
-    it('adds time', () => {
+    it('adds time1', () => {
       expect(c('7:50', 4)).toEqual('7:54')
     })
-    it('adds time', () => {
+    it('adds time2', () => {
       expect(c('7:50', 72)).toEqual('9:02')
     })
-    it('adds time', () => {
+    it('adds time3', () => {
       expect(c('11:50', 20)).toEqual('12:10')
     })
-    it('adds time', () => {
+    it('adds time4', () => {
       expect(c('12:50', 120)).toEqual('14:50')
     })
-    it('adds time', () => {
+    it('adds time5', () => {
       expect(c('23:50', 30)).toEqual('00:20')
     })
   })

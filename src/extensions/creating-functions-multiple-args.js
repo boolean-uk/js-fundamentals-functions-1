@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function GetRangeAsArray(lower, upper) {
+  const arrayOut = []
+  for (let i = lower; i <= upper; i++) {
+    arrayOut.push(i)
+  }
+  return arrayOut
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,11 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function StringToShoutingCase(text, exclamationIntensity) {
+  let textOut = text.toUpperCase()
+  textOut = textOut + '!'.repeat(exclamationIntensity)
+  return textOut
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +45,40 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addTime(currentTime, timeSpan) {
+  const [hourStr, minuteStr] = currentTime.split(':')
+  let hourInt = parseInt(hourStr)
+  let minuteInt = parseInt(minuteStr)
+
+  const hoursToAdd = Math.floor(timeSpan / 60)
+  const minutesToAdd = timeSpan % 60
+
+  // New day
+  hourInt += hoursToAdd
+  if (hourInt >= 24) {
+    hourInt %= 24
+  }
+
+  // New hour
+  minuteInt += minutesToAdd
+  if (minuteInt >= 60) {
+    minuteInt %= 60
+    hourInt += 1
+    if (hourInt >= 24) {
+      hourInt %= 24
+    }
+  }
+
+  // Add leading 0 for minutes
+  const minuteFormatted = minuteInt < 10 ? `0${minuteInt}` : `${minuteInt}`
+  const hourFormatted = hourInt === 0 ? `0${hourInt}` : `${hourInt}`
+
+  return `${hourFormatted}:${minuteFormatted}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: GetRangeAsArray, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: StringToShoutingCase, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addTime // etc
 }

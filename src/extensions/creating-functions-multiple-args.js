@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function getNumbersBetween(lower, upper) {
+  const numbers = []
+  for (let i = lower; i < upper + 1; i++) {
+    numbers.push(i)
+  }
+  return numbers
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,13 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function scream(string, number) {
+  let capitalizedString = string.toUpperCase()
+  for (let i = 0; i < number; i++) {
+    capitalizedString += '!'
+  }
+  return capitalizedString
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +47,37 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutes(startTime, minutesToAdd) {
+  const time = startTime.split(':')
+  let hours = parseInt(time[0])
+  let minutes = parseInt(time[1])
+  minutes += parseInt(minutesToAdd)
+
+  if (minutes >= 60) {
+    const remainder = Math.floor(minutes / 60)
+    // console.log(remainder, minutes)
+    hours += remainder
+    minutes -= 60 * remainder
+    // console.log(minutes)
+
+    if (minutes < 10) {
+      minutes = '0' + minutes
+    }
+
+    if (hours >= 24) {
+      hours -= Math.floor(hours / 24) * 24
+
+      if (hours < 10) {
+        hours = '0' + hours
+      }
+    }
+  }
+  return `${hours}:${minutes}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: getNumbersBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: scream, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutes // etc
 }

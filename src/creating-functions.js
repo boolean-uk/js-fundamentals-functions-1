@@ -7,9 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
-
+const Increment = (num) => {
+  return num+1;
+}
 // 2. Define a function that capitalises any string
-
 // Example Input and Output:
 //
 // Input | Output
@@ -18,7 +19,9 @@
 // Hello | Hello
 
 // TODO: write code below
-
+const ToUpperCase = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,7 +32,9 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-
+const HappyHello = (name) => {
+  return `Hi, ${name.charAt(0).toUpperCase() + name.slice(1)} :)`
+}
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -42,6 +47,16 @@
 //
 // TODO: write code below
 
+const CountArray = (arr) => {
+  let count = 0;
+  arr.forEach(e => {
+    if (typeof e === 'string'){
+      count++;
+    }
+  });
+  return count;
+}
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +67,20 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+const Edward = (obj) => {
+  if (!obj.hasOwnProperty('edward')){
+    obj['edward'] = 'amazing'
+  } else {
+    obj.edward = 'fabulous'
+  }
+  return obj
+}
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: Increment, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: ToUpperCase, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: HappyHello, // etc
+  d: CountArray,
+  e: Edward
 }

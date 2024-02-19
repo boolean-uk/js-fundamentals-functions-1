@@ -7,7 +7,9 @@
 // 2      | 3
 //
 // TODO: write code below
-const increment = (a) => {return ++a;}
+const increment = (a) => {
+  return ++a
+}
 
 // 2. Define a function that capitalises any string
 
@@ -19,7 +21,9 @@ const increment = (a) => {return ++a;}
 // Hello | Hello
 
 // TODO: write code below
-const capitalises = (a) => { return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase();}
+const capitalises = (a) => {
+  return a.charAt(0).toUpperCase() + a.slice(1).toLowerCase()
+}
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -31,7 +35,9 @@ const capitalises = (a) => { return a.charAt(0).toUpperCase() + a.slice(1).toLow
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-const smiley = (a) => {return 'Hi, ' + a.charAt(0).toUpperCase() + a.slice(1) + ' :)'}
+const smiley = (a) => {
+  return 'Hi, ' + a.charAt(0).toUpperCase() + a.slice(1) + ' :)'
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -45,9 +51,11 @@ const smiley = (a) => {return 'Hi, ' + a.charAt(0).toUpperCase() + a.slice(1) + 
 //
 // TODO: write code below
 const strings = (s) => {
-  let num = 0;
-  s.forEach(elm => {if(typeof(elm) == 'string') num++;});
-  return num;
+  let num = 0
+  s.forEach((elm) => {
+    if (typeof elm === 'string') num++
+  })
+  return num
 }
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
@@ -61,8 +69,8 @@ const strings = (s) => {
 //
 // TODO: write code below
 const adds = (people) => {
-  if ( !('edward' in people) ) people.edward = 'amazing';
-  return people;
+  if (!('edward' in people)) people.edward = 'amazing'
+  return people
 }
 
 // TODO: change each undefined below to be the name of the functions you defined

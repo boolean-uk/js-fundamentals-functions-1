@@ -10,11 +10,11 @@
 //
 // TODO: write code below
 const fillNums = (min, max) => {
-  const result = [];
+  const result = []
   for (let i = min; i <= max; i++) {
-    result.push(i);
+    result.push(i)
   }
-  return result;
+  return result
 }
 
 // 2. define a function that takes two arguments: a string and a number.
@@ -29,7 +29,7 @@ const fillNums = (min, max) => {
 //
 // TODO: write code below
 const screamAndShout = (words, num) => {
-  return words.toUpperCase() + '!'.repeat(num);
+  return words.toUpperCase() + '!'.repeat(num)
 }
 
 // 3. define a function that takes two arguments: a string and a number.
@@ -44,18 +44,18 @@ const screamAndShout = (words, num) => {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 const toTime = (time, increment) => {
-  const temp = time.split(':');
-  let h = Number(temp[0]);
-  let m = Number(temp[1]) + Number(increment);
-  
-  h += Math.floor(m / 60);
-  h = h % 24;
-  m = m % 60;
+  const temp = time.split(':')
+  let h = Number(temp[0])
+  let m = Number(temp[1]) + Number(increment)
 
-  if ( h == 0 ) h = String("0" + h);
-  if ( m < 10 ) m = String("0" + m);
+  h += Math.floor(m / 60)
+  h = h % 24
+  m = m % 60
 
-  return h + ':' + m;
+  if (h === 0) h = String('0' + h)
+  if (m < 10) m = String('0' + m)
+
+  return h + ':' + m
 }
 
 // TODO: change the exported value to be the name of the function you defined

@@ -56,7 +56,7 @@ function AddMintuesToTime(time, minutes) {
     parseInt(timesplit[1]) * 60 * 1000 +
     minutes * 60 * 1000
   const newTime = new Date(mseconds)
-  timesplit[0] = newTime.getHours() - 1
+  timesplit[0] = newTime.getHours()
   if (timesplit[0] < 10) {
     timesplit[0].toString()
     timesplit[0] = '0' + timesplit[0]

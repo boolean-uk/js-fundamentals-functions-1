@@ -7,7 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function plusOne(number) {
+  number = number + 1
+  return number
+}
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -18,7 +21,10 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitalLetter(string) {
+  string = string[0].toUpperCase() + string.slice(1)
+  return string
+}
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,7 +35,11 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-
+function smileyFace(string) {
+  string = string[0].toUpperCase() + string.slice(1)
+  const greeting = 'Hi, ' + string + ' :)'
+  return greeting
+}
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -41,7 +51,15 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-
+function stringCount(strings) {
+  let count = 0
+  for (let i = 0; i <= strings.length; i++) {
+    if (typeof strings[i] === 'string') {
+      count = count + 1
+    }
+  }
+  return count
+}
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +70,17 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function addEdward(object) {
+  if (object.edward == null) {
+    object.edward = 'amazing'
+  }
+  return object
+}
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: plusOne, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalLetter, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileyFace, // etc
+  d: stringCount,
+  e: addEdward
 }

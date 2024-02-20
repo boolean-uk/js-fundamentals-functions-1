@@ -8,7 +8,13 @@
 // 10, 13       | [10, 11, 12, 13]
 // -1, 1        | [-1, 0, 1]
 //
-// TODO: write code below
+function createNumberRange(lower, upper) {
+  const result = []
+  for (let i = lower; i <= upper; i++) {
+    result.push(i)
+  }
+  return result
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -20,7 +26,9 @@
 // disaster, 5  | DISASTER!!!!!
 // error, 10    | ERROR!!!!!!!!!!
 //
-// TODO: write code below
+function addExclamationMarks(str, num) {
+  return str.toUpperCase() + '!'.repeat(num)
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -32,11 +40,21 @@
 // '11:50', 20  | '12:10'
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
-// TODO: write code below
+
+function addMinutesToTime(time, minutes) {
+  const [hours, mins] = time.split(':').map(Number)
+  const totalMinutes = hours * 60 + mins + minutes
+  const newHours = Math.floor(totalMinutes / 60) % 24
+  const newMins = totalMinutes % 60
+  const formattedHours = newHours === 0 ? '00' : newHours.toString()
+  const formattedMins = newMins.toString().padStart(2, '0')
+
+  return `${formattedHours}:${formattedMins}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: createNumberRange, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: addExclamationMarks, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutesToTime // etc
 }

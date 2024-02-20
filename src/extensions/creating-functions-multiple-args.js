@@ -31,7 +31,7 @@ function returnArr(lower, upper) {
 // TODO: write code below
 
 function returnStringUpperCase(word, num) {
-  return string.toUpperCase() + '!'.repeat(num);
+  return word.toUpperCase() + '!'.repeat(num);
 }
 
 // 3. define a function that takes two arguments: a string and a number.
@@ -48,9 +48,32 @@ function returnStringUpperCase(word, num) {
 
 // TODO: change the exported value to be the name of the function you defined
 
+function addMinutesToTime(timeString, minutesToAdd) {
+  let [hours, minutes] = timeString.split(':').map(Number);
+  hours += Math.floor((minutes + minutesToAdd) / 60);
+  minutes = (minutes + minutesToAdd) % 60;
+  
+  // Adjust hours for 24-hour format
+  hours %= 24;
+  
+  let newHours = hours.toString();
+  let newMinutes = minutes.toString().padStart(2, '0');
+  
+  // Correctly handling '00' hour case
+  if (hours === 0) {
+    newHours = '00'; // Ensure '00' is used for midnight
+  }
+
+  if (hours < 10 && hours !== 0) {
+    newHours = hours.toString();
+  }
+  
+  return `${newHours}:${newMinutes}`;
+}
+
 
 module.exports = {
   a: returnArr, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: returnStringUpperCase, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: addMinutesToTime // etc
 }

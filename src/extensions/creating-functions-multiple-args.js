@@ -9,7 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function numbersBetween(lower, upper) {
+  const array = []
+  for (let i = lower; i <= upper; i++) {
+    array.push(i)
+  }
+  return array
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +27,13 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function excla(string, number) {
+  string = string.toUpperCase()
+  for (let i = 0; i < number; i++) {
+    string += '!'
+  }
+  return string
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +45,31 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function newTime(string, number) {
+  const [hour, minute] = string.split(':')
+  let hourInt = parseInt(hour)
+  let minuteInt = parseInt(minute)
+
+  for (let i = 0; i < number; i++) {
+    minuteInt += 1
+    if (minuteInt === 60) {
+      minuteInt = 0
+      hourInt += 1
+      if (hourInt === 24) {
+        hourInt = 0
+      }
+    }
+  }
+
+  const finalHour = hourInt === 0 ? '0' + hourInt : hourInt
+  const finalMinute = minuteInt < 10 ? '0' + minuteInt : minuteInt
+
+  return finalHour + ':' + finalMinute
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numbersBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: excla, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: newTime // etc
 }

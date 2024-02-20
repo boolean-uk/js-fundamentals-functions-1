@@ -10,6 +10,14 @@
 //
 // TODO: write code below
 
+function numbersBetween(lower, upper) {
+  const res = []
+  for (let i = lower; i <= upper; i++) {
+    res.push(i)
+  }
+  return res
+}
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +29,14 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function exclamation(string, number) {
+  let res = string.toUpperCase()
+  for (let i = 0; i < number; i++) {
+    res += '!'
+  }
+  return res
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -34,9 +50,36 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function addTime(currentTime, toAdd) {
+  const time = currentTime.split(':')
+  let hours = parseInt(time[0])
+  let minutes = parseInt(time[1])
+
+  for (let i = 0; i < toAdd; i++) {
+    if (minutes + 1 >= 60) {
+      if (hours + 1 >= 24) {
+        hours = 0
+      } else {
+        hours++
+      }
+      minutes = 0
+    } else {
+      minutes++
+    }
+  }
+
+  if (hours === 0) {
+    hours = `0${hours}`
+  } else if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
+
+  return `${hours}:${minutes}`
+}
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numbersBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: exclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addTime // etc
 }

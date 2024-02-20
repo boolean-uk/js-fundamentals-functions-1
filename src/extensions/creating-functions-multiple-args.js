@@ -9,7 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function numbersBetween(lower, upper) {
+  const numbers = []
+  for (let i = lower; i <= upper; i++) {
+    numbers.push(i)
+  }
+  return numbers
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +27,14 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function dramatify(str, num) {
+  const val = str.toUpperCase()
+  let excl = ''
+  for (let i = 0; i < num; i++) {
+    excl += '!'
+  }
+  return val + excl
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +46,20 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addTime(str, num) {
+  const [hours, minutes] = str.split(':').map(Number)
+  const totalminutes = hours * 60 + minutes + num
+  const newHour = Math.floor(totalminutes / 60) % 24
+  const newMins = totalminutes % 60
+  const formattedHours = (newHour < 1 ? '0' : '') + newHour
+  const formattedMinutes = (newMins < 10 ? '0' : '') + newMins
+
+  return `${formattedHours}:${formattedMinutes}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numbersBetween, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: dramatify, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addTime // etc
 }

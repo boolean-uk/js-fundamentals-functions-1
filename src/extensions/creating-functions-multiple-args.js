@@ -41,29 +41,20 @@ function repeatExclamation(string, count) {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 function change(time, minutesToBeAdded) {
-  // legg til additional tid, sjekk deretter om timer er >= 24 ?
-  const split = time.split(':')
-  let hours = Number(split[0])
-  let minutes = Number(split[1])
-  const additionalHours = Math.floor(minutesToBeAdded / 60)
-  const additionalMinutes = minutesToBeAdded - additionalHours * 60
-  minutes += additionalMinutes
-  hours += additionalHours
-
-  if (minutes > 60) {
-    const h = Math.floor(minutes / 60)
-    hours += h
-    minutes -= h * 60
-  }
+  let [hours, minutes] = time.split(':').map(Number)
+  minutes += minutesToBeAdded
+  const h = Math.floor(minutes / 60)
+  hours += h
+  minutes -= h * 60
   hours = hours % 24
-  // hours = hours / 10 < 1 ? `0${hours}` : hours.toString()
+  hours = hours === 0 ? `00` : hours.toString()
   minutes = minutes / 10 < 1 ? `0${minutes}` : minutes.toString()
   return `${hours}:${minutes}`
 }
-console.log(change('7:50', 72))
+console.log(change('11:50', 20))
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
   a: fillArrayFromLowerToUpper, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
   b: repeatExclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  c: change // etc
 }

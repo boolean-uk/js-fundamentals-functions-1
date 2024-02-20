@@ -51,7 +51,8 @@ function AddMinutes(string, number) {
   minutes %= 60
   hours %= 24
 
-  const formattedHours = hours.toString()
+  const formattedHours =
+    hours === 0 ? String(hours).padStart(2, '0') : hours.toString()
   const formattedMinutes = String(minutes).padStart(2, '0')
 
   return `${formattedHours}:${formattedMinutes}`

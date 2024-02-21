@@ -90,12 +90,30 @@ if (countOfStrings === 1) {
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function addToObject(object) {
+  const result = object
+  result.edward = 'amazing'
+  // result.edward = 'fabulous'
+  // let i = 0
+  // for (i = 0; i < result.length; i++) {
+  if (!result.edward) {
+    result.edward = 'amazing'
+  } // else if
+  // i++
+  // }
+  // }
+  return result
+}
+const newObject = addToObject({
+  aiyana: 'fantastic',
+  edward: 'fabulous'
+})
+console.log(newObject)
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
   b: capitalise, // 2. change undefined to be the name of the function you defined for the second TODO)
   c: smileyName, // etc
   d: stringCount,
-  e: undefined
+  e: addToObject
 }

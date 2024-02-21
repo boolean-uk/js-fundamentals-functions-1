@@ -70,9 +70,10 @@ function countString(array) {
 //
 // TODO: write code below
 function addEdwardProperty(obj) {
-  if (!obj.hasOwn('edward')) {
-    obj.edward = 'amazing'
+  if (Object.hasOwn(obj, 'edward')) {
+    return obj
   }
+  obj.edward = 'amazing'
   return obj
 }
 // TODO: change each undefined below to be the name of the functions you defined

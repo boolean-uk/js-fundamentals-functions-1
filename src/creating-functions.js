@@ -7,7 +7,9 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function incrementUp(num) {
+  return num + 1
+}
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -18,7 +20,15 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitlisation(inputString) {
+  if (typeof inputString !== 'string') {
+    throw console.error('A string has not been entered')
+  }
+  const splitString = inputString.split('')
+  splitString[0] = splitString[0].toUpperCase()
+  const outputString = splitString.join('')
+  return outputString
+}
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +39,9 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function smileyHi(name) {
+  return `Hi, ${capitlisation(name)} :)`
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,7 +54,15 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-
+function arrayStringCheck(arr) {
+  let count = 0
+  for (const value of arr) {
+    if (typeof value === 'string') {
+      count++
+    }
+  }
+  return count
+}
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +73,18 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function addEdward(obj) {
+  const propertiesArr = Object.getOwnPropertyNames(obj)
+  if (!propertiesArr.includes('edward')) {
+    obj.edward = 'amazing'
+  }
+  return obj
+}
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: incrementUp, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitlisation, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileyHi, // etc
+  d: arrayStringCheck,
+  e: addEdward
 }

@@ -9,7 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function takeTwoNums(lower, upper) {
+  const array = []
+  for (let i = lower; i <= upper; i++) {
+    array.push(i)
+  }
+  return array
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +27,14 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function createString(str, num) {
+  let excl = ''
+  let newString = str.toUpperCase()
+  for (let i = 1; i <= num; i++) {
+    excl += '!'
+  }
+  return (newString += excl)
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +46,29 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function fixTime(str, num) {
+  const [hourStr, minutesStr] = str.split(':')
+  let hour = parseInt(hourStr)
+  let minutes = parseInt(minutesStr)
 
+  minutes += num
+  minutes += hour * 60
+
+  hour = Math.floor(minutes / 60)
+  minutes = minutes % 60
+  hour %= 24
+
+  if (hour === 0) {
+    hour += '0'
+  } else if (minutes < 10) {
+    minutes = '0' + minutes
+  }
+  const returnString = `${hour}:${minutes}`
+  return returnString
+}
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: takeTwoNums, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: createString, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: fixTime // etc
 }

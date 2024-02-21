@@ -55,18 +55,12 @@ function addTime(currentTime, toAdd) {
   let hours = parseInt(time[0])
   let minutes = parseInt(time[1])
 
-  for (let i = 0; i < toAdd; i++) {
-    if (minutes + 1 >= 60) {
-      if (hours + 1 >= 24) {
-        hours = 0
-      } else {
-        hours++
-      }
-      minutes = 0
-    } else {
-      minutes++
-    }
-  }
+  minutes += toAdd
+  const hoursToAdd = Math.floor(minutes / 60)
+  const newMinutes = minutes % 60
+
+  hours = (hours + hoursToAdd) % 24
+  minutes = newMinutes
 
   if (hours === 0) {
     hours = `0${hours}`

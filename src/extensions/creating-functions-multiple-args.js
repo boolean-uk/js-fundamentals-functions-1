@@ -9,7 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
-
+function createArray(lower, upper) {
+  const array = []
+  for (let i = lower; i <= upper; i++) {
+    array.push(i)
+  }
+  return array
+}
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,7 +27,11 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function toUpperAndExlamations(string, number) {
+  const capitalisedString = string.toUpperCase()
+  const exclamations = '!'.repeat(number)
+  return capitalisedString.concat(exclamations)
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +43,30 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutesToTime(time, minutes) {
+  const [hoursStr, minutesStr] = time.split(':')
+  let hours = parseInt(hoursStr)
+  let mins = parseInt(minutesStr)
+
+  time = hours * 60 + mins + minutes
+  hours = Math.floor(time / 60)
+  mins = time % 60
+  hours %= 24
+
+  // const newHoursStr = (hours < 10 ? '0' : '') + hours
+  // const newMinsStr = (mins < 10 ? '0' : '') + mins
+  if (hours === 0) {
+    hours = '0' + hours
+  }
+  if (mins < 9) {
+    mins = '0' + mins
+  }
+  return `${hours}:${mins}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: createArray, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: toUpperAndExlamations, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutesToTime // etc
 }

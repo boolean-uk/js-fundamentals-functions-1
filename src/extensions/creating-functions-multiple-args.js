@@ -48,24 +48,14 @@ function panicMode(inputString, number) {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 function timeUpdate(time, mins) {
-  let hours
-  let minutes
-  if (time.length === 4) {
-    hours = Number(time.slice(0, 1))
-  } else {
-    hours = Number(time.slice(0, 2))
-  }
-  if (time.length === 4) {
-    minutes = Number(time.slice(2, 4))
-  } else {
-    minutes = Number(time.slice(3), 5)
-  }
+  let hours = Number(time.split(':')[0])
+  const minutes = Number(time.split(':')[1])
   let minutesSum = minutes + mins
   while (minutesSum >= 60) {
     hours += 1
     minutesSum -= 60
   }
-  if (hours >= 24) {
+  while (hours >= 24) {
     hours -= 24
   }
   if (hours === 0) {

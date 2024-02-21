@@ -7,6 +7,10 @@
 // 2      | 3
 //
 // TODO: write code below
+function plusOne(number) {
+  return(number += 1)
+}
+console.log(plusOne(2))
 
 // 2. Define a function that capitalises any string
 
@@ -19,6 +23,11 @@
 
 // TODO: write code below
 
+function capitalises(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1)
+}
+console.log(capitalises('hello'))
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +38,11 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+
+function smiley(name) {
+  return 'Hi, ' +name.charAt(0).toUpperCase() + name.slice(1) + ' :)'
+}
+console.log(smiley('aiyana'))
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,6 +55,17 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+function howManyStrings(arr) {
+  let howManyStrings = 0
+  for ( let i =0; i < arr.length; i++) {
+    if (typeof arr[i] === 'string') {
+      howManyStrings++
+    }
+  }
+  return howManyStrings
+}
+
+console.log(howManyStrings([ 'edward', 'aiyana']))
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -53,11 +78,20 @@
 //
 // TODO: write code below
 
+function addName(object) {
+  if ( !object.edward) {
+    object.edward = 'amazing'
+  }
+  return object
+}
+console.log(addName({ aiyana: 'fantastic'}))
+
 // TODO: change each undefined below to be the name of the functions you defined
-module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+
+module.exports= { 
+  a: plusOne, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalises, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smiley, // etc
+  d: howManyStrings,
+  e: addName
 }

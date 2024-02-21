@@ -1,7 +1,8 @@
 // 1. define a function that takes two numbers: lower and upper.
 // The function should return an array containing all the numbers between
 // lower and upper, including lower and upper.
-//
+// 
+// 
 // Example Input and Output:
 // Input        | Output
 // 1, 3         | [1,2,3]
@@ -10,6 +11,14 @@
 //
 // TODO: write code below
 
+function getArr(lowerNumber, upperNumber) {
+  const numberArr = []
+  for (let i = lowerNumber; i <= upperNumber; i++) {
+    numberArr.push(i)
+  }
+return numberArr
+}
+console.log(getArr(1,10))
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +30,17 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function exclamation(string, number) {
+  let exNumber = ''
+  for (let i = 1; i <= number; i++){
+    exNumber += '!'
+  }
+  return string.toUpperCase() + exNumber
+}
+console.log(exclamation('disaster', 5))
+
+
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -34,9 +54,27 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function newTime(string, number) {
+const stringExc = string.split(':')
+const stringHour = Number(stringExc[0]) * 60
+const stringMin = Number(stringExc[1]) + number
+const numJoint = stringHour + stringMin
+let hours = Math.floor(numJoint / 60)
+let minutes = numJoint % 60
+if (minutes < 10) {
+  minutes = '0' + minutes
+}
+if (hours > 23) {
+  hours = '00'
+}
+return hours + ':' + minutes
+}
+console.log(newTime( '23:50', 30))
+
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: getArr, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: exclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: newTime, // etc
 }

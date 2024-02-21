@@ -10,6 +10,18 @@
 //
 // TODO: write code below
 
+function numArray(lower, upper) {
+  const output = []
+
+  for (let i = lower; i <= upper; i++) {
+    output.push(i)
+  }
+
+  return output
+}
+
+console.log(numArray(1, 5))
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +33,17 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function shout(string, number) {
+  let word = string.toUpperCase()
+  for (let i = 1; i <= number; i++) {
+    word += '!'
+  }
+
+  return word
+}
+
+console.log(shout('hello', 5))
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.

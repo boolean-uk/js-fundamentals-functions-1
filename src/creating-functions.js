@@ -8,6 +8,10 @@
 //
 // TODO: write code below
 
+function increment(num) {
+return num + 1
+} 
+
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -19,6 +23,13 @@
 
 // TODO: write code below
 
+function cap(str) {
+  firstLet = str[0]
+  let newLet = firstLet.toUpperCase()
+  const result = newLet + str.slice(1);
+  return result
+}
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +40,11 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+
+function nameSmile(name) {
+  const newName = cap(name)
+  return `Hi, ${newName} :)`
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -42,6 +58,18 @@
 //
 // TODO: write code below
 
+function strCheck(arr) {
+  let count = 0
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (typeof arr[i] === "string") {
+       count += 1
+    }
+
+  }
+  return count
+}
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -53,11 +81,19 @@
 //
 // TODO: write code below
 
+function edward(obj) {
+if (!obj.hasOwnProperty('edward')) {
+  obj.edward = 'amazing'
+}
+return obj
+}
+
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increment, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: cap, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: nameSmile, // etc
+  d: strCheck,
+  e: edward
 }

@@ -8,6 +8,10 @@
 //
 // TODO: write code below
 
+function addOne(num){
+  return num + 1
+}
+
 // 2. Define a function that capitalises any string
 
 // Example Input and Output:
@@ -19,6 +23,10 @@
 
 // TODO: write code below
 
+function stringCapitaliser(string){
+  return string.replace(string[0], string[0].toUpperCase())
+}
+
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,6 +37,10 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+
+function greeter(name){
+  return `Hi, ${name.replace(name[0], name[0].toUpperCase())} :)`
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -42,6 +54,16 @@
 //
 // TODO: write code below
 
+function stringCounter(arr){
+  stringCount = 0
+  for (let i = 0; i < arr.length; i++){
+    if (typeof arr[i] === 'string'){
+      stringCount++
+    }
+  }
+  return stringCount
+}
+
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -53,11 +75,28 @@
 //
 // TODO: write code below
 
+function addProperty(object){
+  if (!Object.keys(object).includes('edward')){
+    object.edward = 'amazing' 
+  }
+  return object
+}
+
+const testObj = {
+  paul: 'nice',
+  rob: 'solid',
+  tom: 'poor'
+}
+
+
+console.log(addProperty(testObj))
+
+
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: addOne, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: stringCapitaliser, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: greeter, // etc
+  d: stringCounter,
+  e: addProperty
 }

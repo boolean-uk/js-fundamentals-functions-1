@@ -43,18 +43,18 @@ function exclamationInCaps(str, num) {
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
-function minsToHours(m) {
-  if (m >= 60) {
-    let h = Math.floor(m / 60)
-    let mPercent = ('' + m / 60).split('.')[1],
-      m = (mPercent / 10) * 60
+function minsToHours(mins) {
+  if (mins >= 60) {
+    let h = Math.floor(mins / 60)
+    let mPercent = (mins % 60) / 60,
+      m = mPercent * 60
     return [h, m]
-  } else return m
+  } else return [0, mins]
 }
 
 function addTime(timeStr, mins) {
   const [timeH, timeM] = timeStr.split(':')
-  const [minsH, m] = minsToHours(mins + timeM)
+  const [minsH, m] = minsToHours(mins + +timeM)
   const check24Clock = (h) => (h > 23 ? check24Clock(h - 24) : h)
   const getDoubleDigits = (n) => {
     if (('' + n).length < 2) {
@@ -62,10 +62,15 @@ function addTime(timeStr, mins) {
     }
     return n
   }
-  const h = check24Clock(timeH + minsH)
+  const getHoursDoubleDigits = (h) => {
+    if (h === 0) return '00'
+    else return h
+  }
+  const h = check24Clock(+timeH + minsH)
 
-  return `${getDoubleDigits(h)}:${getDoubleDigits(m)}`
+  return `${getHoursDoubleDigits(h)}:${getDoubleDigits(m)}`
 }
+console.log(addTime('11:50', 20))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

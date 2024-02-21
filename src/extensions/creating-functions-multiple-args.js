@@ -10,6 +10,15 @@
 //
 // TODO: write code below
 
+function differenceArray(lowNum, highNum){
+  let newArray = []
+  for (i = lowNum; i <= highNum; i++){
+     newArray.push(i)
+  }
+  return newArray
+}
+
+
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
 // marks appended to the end. The number of exclamation marks should be
@@ -21,6 +30,10 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+
+function warningIntensifier(string, num){
+  return `${string.toUpperCase()}${'!'.repeat(num)}`
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -34,9 +47,54 @@
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
+function timeTraveller(time, addedMins){
+  //convert time input into overall minutes
+
+  let numArr = [] // this is going to be the array that has the time in as numbers
+
+  let timeArr = time.split('') //Makes time input into an array
+  let colonIndex = timeArr.indexOf(':') //Finds the colon
+  timeArr.splice(colonIndex, 1) //Splices out the colon
+
+  for (let i = 0; i < timeArr.length; i++){ //Turns each string in the array into a number
+    numArr.push(parseInt(timeArr[i]))
+  }
+   
+  let inputMins = numArr[numArr.length-1] + (numArr[numArr.length-2] * 10) //This is finding the minutes from the input (after the colon)
+  let inputHours = 0 //This will hold the number of hours from the input (before the colon)
+
+  if (numArr.length === 4){ //This is calculating the total number of hours from the first part of the time input
+    inputHours = ((numArr[0] * 10) + numArr[1])
+  } else {
+    inputHours = numArr[0]
+  }
+
+  let totalTime = ((inputHours * 60) + inputMins) + addedMins // This totals the original input time plus the mins to be added, in mins
+  let newHours = Math.floor(totalTime/60) //Calculates the hours that will go before the colon in output
+  let newMins = totalTime % 60 //Calculates the minutes that will go after the colon in output
+  
+  if (newHours > 23){ //Cycles down the time to 00 (24-hour format) if the time has gone above 24 hours (00:00)
+    while (newHours > 23){
+      newHours -= 24
+    }
+  }
+
+  if (newHours === 0){ //Adds an extra zero if hours have reached '0'
+    newHours = '00'
+  }
+  
+  if (newMins.toString().length < 2){ //Adds a zero before the minutes, if it is a single digit
+    newMins = `0${newMins}`
+  }
+
+ return `${newHours}:${newMins}`
+}
+
+
+
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: differenceArray, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: warningIntensifier, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: timeTraveller // etc
 }

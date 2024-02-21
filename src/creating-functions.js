@@ -40,7 +40,7 @@ function capitalise(str) {
 // TODO: write code below
 function addSmile(name) {
   const firstChar = name.charAt(0).toUpperCase()
-  return  `Hi, ${firstChar}${name.slice(1)} :)`
+  return `Hi, ${firstChar}${name.slice(1)} :)`
 }
 // const smile = addSmile('name')
 // console.log(smile);
@@ -56,11 +56,11 @@ function addSmile(name) {
 //
 // TODO: write code below
 function findStrings(arr) {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++){
+  let count = 0
+  for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] === 'string') {
       count++
-    } 
+    }
   }
   return count
 }
@@ -79,10 +79,11 @@ function findStrings(arr) {
 function amazingEd(obj) {
   if (!obj.edward) {
     obj.edward = 'amazing'
-  } return obj
+  }
+  return obj
 }
-const checkEd = amazingEd({p1:'maria',p2:'eddie'})
-console.log(checkEd);
+// const checkEd = amazingEd({ p1: 'maria', p2: 'eddie' })
+// console.log(checkEd)
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: increaseNumber, // 1. change undefined to be the name of the function you defined for the first TODO

@@ -50,26 +50,19 @@ function warningIntensifier(string, num){
 function timeTraveller(time, addedMins){
   //convert time input into overall minutes
 
-  let numArr = [] // this is going to be the array that has the time in as numbers
+  let numArr = [] // this is going to be the array that holds the time in as numbers
 
-  let timeArr = time.split('') //Makes time input into an array
-  let colonIndex = timeArr.indexOf(':') //Finds the colon
-  timeArr.splice(colonIndex, 1) //Splices out the colon
+  let timeArr = time.split('') //Converts time input into an array
+  timeArr.splice(timeArr.indexOf(':'), 1) //Splices out the colon
 
-  for (let i = 0; i < timeArr.length; i++){ //Turns each string in the array into a number
+  for (let i = 0; i < timeArr.length; i++){ //Converts each string in the array into a number
     numArr.push(parseInt(timeArr[i]))
   }
    
   let inputMins = numArr[numArr.length-1] + (numArr[numArr.length-2] * 10) //This is finding the minutes from the input (after the colon)
-  let inputHours = 0 //This will hold the number of hours from the input (before the colon)
+  let inputHours = numArr.length === 4 ? ((numArr[0] * 10) + numArr[1]) : numArr[0]  //This is calculating the total number of hours from before colon
 
-  if (numArr.length === 4){ //This is calculating the total number of hours from the first part of the time input
-    inputHours = ((numArr[0] * 10) + numArr[1])
-  } else {
-    inputHours = numArr[0]
-  }
-
-  let totalTime = ((inputHours * 60) + inputMins) + addedMins // This totals the original input time plus the mins to be added, in mins
+  let totalTime = ((inputHours * 60) + inputMins) + addedMins // This totals the original input plus the mins (in mins)
   let newHours = Math.floor(totalTime/60) //Calculates the hours that will go before the colon in output
   let newMins = totalTime % 60 //Calculates the minutes that will go after the colon in output
   
@@ -82,15 +75,15 @@ function timeTraveller(time, addedMins){
   if (newHours === 0){ //Adds an extra zero if hours have reached '0'
     newHours = '00'
   }
-  
+
   if (newMins.toString().length < 2){ //Adds a zero before the minutes, if it is a single digit
     newMins = `0${newMins}`
   }
-
+  
  return `${newHours}:${newMins}`
 }
 
-
+console.log(timeTraveller('12:40', 1))
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {

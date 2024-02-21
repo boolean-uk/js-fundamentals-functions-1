@@ -82,16 +82,6 @@ function addProperty(object){
   return object
 }
 
-const testObj = {
-  paul: 'nice',
-  rob: 'solid',
-  tom: 'poor'
-}
-
-
-console.log(addProperty(testObj))
-
-
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
   a: addOne, // 1. change undefined to be the name of the function you defined for the first TODO

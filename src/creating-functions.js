@@ -7,6 +7,9 @@
 // 2      | 3
 //
 // TODO: write code below
+function increment(number) {
+  return number + 1
+}
 
 // 2. Define a function that capitalises any string
 
@@ -18,6 +21,10 @@
 // Hello | Hello
 
 // TODO: write code below
+function capitalise(word) {
+  const first = word.charAt(0)
+  return first.toUpperCase() + word.slice(1)
+}
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -29,6 +36,10 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
+function hiWithSmiley(name) {
+  const capName = capitalise(name)
+  return 'Hi, ' + capName + ' :)'
+}
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -41,6 +52,17 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
+function countStrings(data) {
+  let counter = 0
+  if (data.length !== 0) {
+    for (const elem of data) {
+      if (typeof elem === 'string') {
+        counter++
+      }
+    }
+  }
+  return counter
+}
 
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
@@ -52,12 +74,18 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
+function addObject(object) {
+  if (!Object.hasOwn(object, 'edward')) {
+    object.edward = 'amazing'
+  }
+  return object
+}
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increment, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalise, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: hiWithSmiley, // etc
+  d: countStrings,
+  e: addObject
 }

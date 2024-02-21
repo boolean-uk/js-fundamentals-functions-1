@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+const numbersBetweenLowerAndUpper = (lower, upper) => {
+  const numbers = []
+  for (let i = lower; i <= upper; i++) {
+    numbers.push(i)
+  }
+  return numbers
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +28,9 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+const upperCaseWithExclamations = (string, number) => {
+  return string.toUpperCase() + '!'.repeat(number)
+}
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +43,25 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutesToTime(time, minutes) {
+  const [hourStr, minuteStr] = time.split(':')
+  const hour = parseInt(hourStr)
+  const mins = parseInt(minuteStr)
+
+  const totalMinutes = hour * 60 + mins + minutes
+
+  const newHour = Math.floor(totalMinutes / 60) % 24
+  const newMin = totalMinutes % 60
+
+  const formattedHour = newHour === 0 ? '00' : newHour.toString()
+  const formattedMin = newMin < 10 ? '0' + newMin.toString() : newMin.toString()
+
+  return `${formattedHour}:${formattedMin}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: numbersBetweenLowerAndUpper, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: upperCaseWithExclamations, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutesToTime // etc
 }

@@ -57,7 +57,6 @@ function addTime(stringInput, numberInput) {
     stringInput.length
   )
   const min = parseInt(subMin)
-  console.log('const min: ' + min)
 
   let hr = 0
   if (stringInput.charAt(1) === ':') {
@@ -65,16 +64,13 @@ function addTime(stringInput, numberInput) {
   } else {
     hr = parseInt(stringInput.substring(0, 2))
   }
-  console.log('const hr: ' + hr)
 
   const totalMin = numberInput + min
-  console.log('const totalMin: ' + totalMin)
 
   if (totalMin > 60) {
     const extraMin = totalMin % 60
-    console.log('const extraMin: ' + extraMin)
+
     const extraHr = parseInt(totalMin / 60)
-    console.log('const extraHr: ' + extraHr)
 
     // lägg till nya minuter
     minString = extraMin.toString()

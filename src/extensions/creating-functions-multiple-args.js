@@ -9,6 +9,17 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function fillTheGap(low, high) {
+  const filledArr = []
+  if (low > high) {
+    return `1st number must be lower than the 2nd`
+  }
+  for (let i = low; i <= high; i++) {
+    filledArr.push(i)
+  }
+  return filledArr
+}
+console.log(fillTheGap(8, 7))
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +32,11 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function addExclam(str, num) {
+  num = num + str.length
+  return str.toUpperCase().padEnd(num, '!')
+}
+// console.log(addExclam('fire',2));
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
@@ -33,10 +49,46 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinutes(str, num) {
+  const hStr = str.slice(0, 2)
+  let hoursStr = ''
+  const mStr = str.slice(-2)
+  let minStr = ''
+  let hours = 0
+  let min = 0
+  for (let i = 0; i < hStr.length; i++) {
+    if (hStr[i] === ':') {
+      continue
+    }
+    hoursStr = hoursStr + hStr[i]
+    hours = hoursStr * 1
+  }
+  for (let i = 0; i < mStr.length; i++) {
+    minStr = minStr + mStr[i]
+    min = minStr * 1
+  }
+  if (num >= 60) {
+    min = min + (num % 60)
+    hours = hours + Math.floor(num / 60)
+  } else {
+    min = min + num
+  }
+  if (min > 59) {
+    hours = hours + 1
+    min = min - 60
+  }
+  if (hours > 23) {
+    hours = '00'
+  }
+  if (min < 10) {
+    min = `0${min}`
+  }
+  return `${hours}:${min}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: fillTheGap, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: addExclam, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinutes // etc
 }

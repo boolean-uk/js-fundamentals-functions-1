@@ -9,6 +9,13 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function generateRange(lower, upper) {
+  const result = []
+  for (let i = lower; i <= upper; i++) {
+    result.push(i)
+  }
+  return result
+}
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,7 +28,12 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
-
+function addExclamation(string, number) {
+  const stringToUpperCase = string.toUpperCase()
+  const exclamation = '!'.repeat(number)
+  const result = stringToUpperCase + exclamation
+  return result
+}
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
 //
@@ -33,10 +45,29 @@
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+function addMinute(time, minToAdd) {
+  const [hoursString, minuteString] = time.split(':')
+  let hours = parseInt(hoursString)
+  let mins = parseInt(minuteString)
+
+  mins += minToAdd
+  // Calculate new hours and minutes
+  hours += Math.floor(mins / 60)
+  mins = mins % 60
+
+  hours = hours % 24
+
+  if (hours === 0) {
+    hours = `0${hours}`
+  } else if (mins < 10) {
+    mins = `0${mins}`
+  }
+  return `${hours}:${mins}`
+}
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
-  c: undefined // etc
+  a: generateRange, // 1. change undefined to be the name of the function defined to create the range of numbers (the first todo)
+  b: addExclamation, // 2. change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  c: addMinute // etc
 }

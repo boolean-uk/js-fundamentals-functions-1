@@ -90,23 +90,16 @@ if (countOfStrings === 1) {
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-function addToObject(object) {
-  const result = object
-  result.edward = 'amazing'
-  // result.edward = 'fabulous'
-  // let i = 0
-  // for (i = 0; i < result.length; i++) {
-  if (!result.edward) {
+function addToObject(obj) {
+  const result = obj
+  const objectArray = Object.getOwnPropertyNames(result)
+  if (!objectArray.includes('edward')) {
     result.edward = 'amazing'
-  } // else if
-  // i++
-  // }
-  // }
+  }
   return result
 }
 const newObject = addToObject({
-  aiyana: 'fantastic',
-  edward: 'fabulous'
+  aiyana: 'fantastic'
 })
 console.log(newObject)
 // TODO: change each undefined below to be the name of the functions you defined

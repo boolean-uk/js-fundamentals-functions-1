@@ -7,9 +7,14 @@
 // 2      | 3
 //
 // TODO: write code below
-
+function increments(number) {
+  const result = number + 1
+  return result
+}
+const increment = increments(11)
+console.log(increment)
 // 2. Define a function that capitalises any string
-
+//
 // Example Input and Output:
 //
 // Input | Output
@@ -18,7 +23,14 @@
 // Hello | Hello
 
 // TODO: write code below
-
+function capitalise(string) {
+  const result = string
+  const firstLetter = result[0]
+  const capitalfirstLetter = firstLetter.toUpperCase()
+  return result.replace(firstLetter, capitalfirstLetter)
+}
+const capitalized = capitalise('hello')
+console.log(capitalized)
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
 //
@@ -29,7 +41,14 @@
 // Aiyana | Hi, Aiyana :)
 //
 // TODO: write code below
-
+function smileyName(name) {
+  const stringName = name
+  const firstLetter = stringName[0]
+  const capitalise = firstLetter.toUpperCase()
+  return `Hi, ${stringName.replace(firstLetter, capitalise)} :)`
+}
+const result = smileyName('giorgio')
+console.log(result)
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
 // Example Input and Output:
@@ -41,7 +60,26 @@
 // [1, 'edward']        | 1
 //
 // TODO: write code below
-
+function stringCount(arr) {
+  let count = 0
+  let i = 0
+  for (i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'string') {
+      count++
+    }
+  }
+  return count
+}
+const result1 = stringCount(['edward', 'aiyana'])
+const countOfStrings = result1
+console.log(countOfStrings)
+if (countOfStrings === 1) {
+  console.log(`you have ${countOfStrings} string`)
+} else if (countOfStrings > 1) {
+  console.log(`you have ${countOfStrings} strings`)
+} else {
+  console.log('you have no strings')
+}
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -52,12 +90,23 @@
 // { edward: 'fabulous'}    | { edward: 'fabulous'}
 //
 // TODO: write code below
-
+function addToObject(obj) {
+  const result = obj
+  const objectArray = Object.getOwnPropertyNames(result)
+  if (!objectArray.includes('edward')) {
+    result.edward = 'amazing'
+  }
+  return result
+}
+const newObject = addToObject({
+  aiyana: 'fantastic'
+})
+console.log(newObject)
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {
-  a: undefined, // 1. change undefined to be the name of the function you defined for the first TODO
-  b: undefined, // 2. change undefined to be the name of the function you defined for the second TODO)
-  c: undefined, // etc
-  d: undefined,
-  e: undefined
+  a: increments, // 1. change undefined to be the name of the function you defined for the first TODO
+  b: capitalise, // 2. change undefined to be the name of the function you defined for the second TODO)
+  c: smileyName, // etc
+  d: stringCount,
+  e: addToObject
 }

@@ -45,15 +45,16 @@ function shoutString(str, num) {
 // '12:50', 120 | '14:50'
 // '23:50', 30  | '00:20'
 // TODO: write code below
+
 function addMinutes(time, minutesToAdd) {
   const [hours, minutes] = time.split(':').map(Number);
   const totalMinutes = hours * 60 + minutes + minutesToAdd;
-  const newHours = ((Math.floor(totalMinutes / 60) % 24) + 24) % 24; // Adjust for negative hours
+  const newHours = ((Math.floor(totalMinutes / 60) % 24) + 24) % 24; 
   const newMinutes = totalMinutes % 60;
-  // Format hours, special case for '00'
-  const formattedHours = newHours < 10 ? `0${newHours}` : `${newHours}`;
-  // Always format minutes to include leading zero
+
+  const formattedHours = newHours === 0 ? '00' : newHours.toString();
   const formattedMinutes = newMinutes.toString().padStart(2, '0');
+  
   return `${formattedHours}:${formattedMinutes}`;
 }
 // TODO: change the exported value to be the name of the function you defined

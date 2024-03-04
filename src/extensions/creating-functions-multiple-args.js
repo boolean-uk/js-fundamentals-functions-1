@@ -9,6 +9,15 @@
 // -1, 1        | [-1, 0, 1]
 //
 // TODO: write code below
+function between(a, b) {
+  const sum = []
+  for (let c = a; c < b + 1; c++) {
+    sum.push(c)
+  }
+  return sum
+}
+const nums = between(-1, 5)
+console.log(nums)
 
 // 2. define a function that takes two arguments: a string and a number.
 // The function should return the same string but in upper case with exclamation
@@ -21,6 +30,16 @@
 // error, 10    | ERROR!!!!!!!!!!
 //
 // TODO: write code below
+function wow(word, num) {
+  const wordFirst = word.charAt(0).toUpperCase()
+  let wordFull = wordFirst + word.slice(1)
+  for (let a = 0; a < num; a++) {
+    wordFull += '!'
+  }
+  return wordFull
+}
+const exclamation = wow('wazzaaappppp', 9)
+console.log(exclamation)
 
 // 3. define a function that takes two arguments: a string and a number.
 // The function should return the new time in 24hr time after adding the additional time in minutes.
